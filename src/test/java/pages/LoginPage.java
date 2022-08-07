@@ -12,9 +12,6 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    //  @FindBy(xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")
-    //    public WebElement aramaSonucElementi;
-
     @FindBy(xpath = "//*[@class='svg-inline--fa fa-user fa-w-14 ']")
     public WebElement kullaniciSembolu;
 
