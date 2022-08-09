@@ -110,4 +110,5 @@ public class US_01_02StepDefinitions {
     @And("Kullanıcının girdiği email api ile doğrulanmalı")
     public void kullanıcınınGirdiğiEmailApiIleDoğrulanmalı() {
     }
+
 }
