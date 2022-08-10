@@ -11,6 +11,12 @@ import static io.restassured.RestAssured.*;
 
 public class Authentication {
 
+    public static void main(String[] args) {
+
+        String guncelToken=generateToken("UserTeam54","UserTeam54");
+        System.out.println(guncelToken);
+    }
+
 
     public static String generateToken(String username, String password) {
         Map<String, Object> map = new HashMap<>();        map.put("username", username);        map.put("password", password);        map.put("rememberme", true);
