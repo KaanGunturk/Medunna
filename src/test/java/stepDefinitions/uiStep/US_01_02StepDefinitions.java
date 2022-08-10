@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import pages.US_01_02Page;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -17,6 +18,7 @@ import java.util.List;
 public class US_01_02StepDefinitions {
     US_01_02Page page = new US_01_02Page();
     Faker faker = new Faker();
+
 
 
     //US01_TC_01
@@ -126,12 +128,12 @@ public class US_01_02StepDefinitions {
     //US_02_TC_01
     @And("Kullanıcı Username butonuna tıklar")
     public void kullanıcıUsernameButonunaTıklar() {
-      //  page.userName.click();
+        page.userName.click();
     }
 
     @And("Kullanıcı boş bırakılmayan gecerli bir username girebilmeli")
     public void kullanıcıBoşBırakılmayanGecerliBirUsernameGirebilmeli() {
-       // page.userName.sendKeys(faker.name().username());
+       page.userName.sendKeys(faker.name().username());
     }
 
     @And("Kullanıcı adı api ile kontrol edilip doğrulanabilmeli")
@@ -141,6 +143,8 @@ public class US_01_02StepDefinitions {
 
     @And("Kullanıcı email butonuna tıklayabilmeli")
     public void kullanıcıEmailButonunaTıklayabilmeli() {
+        JavascriptExecutor jsx = (JavascriptExecutor)Driver.getDriver();
+        jsx.executeScript("window.scrollBy(0,450)", "");
         page.email.click();
     }
 
@@ -155,6 +159,7 @@ public class US_01_02StepDefinitions {
 
     @And("Kullanıcı email butonunu bos bırakmamalı")
     public void kullanıcıEmailButonunuBosBırakmamalı() {
+        Assert.assertTrue(page.email.isEnabled());
 
     }
 
