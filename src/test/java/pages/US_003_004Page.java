@@ -11,56 +11,58 @@ public class US_003_004Page {
     }
 
     @FindBy(xpath = "//*[@data-icon='user']")
-    WebElement profilButonu;
+    public WebElement profilButonu;
 
     @FindBy(xpath = "//*[text()='Sign in']")
-    WebElement signInButonu;
+    public WebElement signInButonu;
 
-    @FindBy(xpath = "//input[@name=‘username’]")
-    WebElement usernameTextBox;
+    @FindBy(xpath = "//*[@id=\"username\"]")
+    public WebElement usernameTextBox;
 
-    @FindBy(xpath = "//input[@name=‘username’]")
-    WebElement passwordTextBox;
+    @FindBy(xpath = "//*[@id=\"password\"]")
+    public WebElement passwordTextBox;
 
-    @FindBy(xpath = "//*[text()='Remember me’]")
-    WebElement rememberMeBox;
+    @FindBy(xpath = "//input[@name='rememberMe']")
+    public WebElement rememberMeBox;
 
     @FindBy(xpath = "//*[text()='Did you forget your password?']")
-    WebElement didYouForgotPasswordButonu;
+    public WebElement didYouForgotPasswordButonu;
 
-    @FindBy(xpath = "(//div[@class=\"alert alert-warning fade show”])[2]")
-    WebElement youDontHaveAccountYetButonu;
+    @FindBy(xpath = "//*[text()='Register a new account']")
+    public WebElement youDontHaveAccountYetButonu;
 
     @FindBy(xpath = "//*[text()='Cancel']")
-    WebElement cancelButonu;
+    public WebElement cancelButonu;
 
     @FindBy(xpath = "//button[@type='submit']")
-    WebElement signInPageSignInButonu;
+    public WebElement signInPageSignInButonu;
 
     @FindBy(xpath = "//*[text()='Register']")
-    WebElement RegisterButonu;
+    public WebElement registerButonu;
+
+
+    @FindBy(xpath = "//li[@id='admin-menu']")
+    public WebElement basariliGiris;
 
     @FindBy(xpath = "//input[@name='firstPassword']")
-    WebElement newPasswordTextBox;
+    public WebElement newPasswordTextBox;
 
     @FindBy(xpath = "//ul[@id='strengthBar']")
-    WebElement strengthBar;
+    public WebElement strengthBar;
 
-    @FindBy(xpath = "(//li[@class=‘point’])[1]")
-    WebElement strengthBarSeviye1 ;
+    @FindBy(xpath = "(//li[@style='background-color: rgb(255, 153, 0);'])[1]")
+    public WebElement strengthBarSeviye1 ;
 
-    @FindBy(xpath = "(//li[@class=‘point’])[2]")
-    WebElement trengthBarSeviye2;
+    @FindBy(xpath = "(//li[@style='background-color: rgb(255, 153, 0);'])[2]")
+    public WebElement strengthBarSeviye2;
 
-    @FindBy(xpath = "(//li[@class=‘point’])[3]")
-    WebElement trengthBarSeviye3;
+    @FindBy(xpath = "(//li[@style='background-color: rgb(221, 221, 221);'])[2]")
+    public WebElement strengthBarSeviye3;
 
-    @FindBy(xpath = "(//li[@class=‘point’])[4]")
-    WebElement trengthBarSeviye4;
+    @FindBy(xpath = "(//li[@style='background-color: rgb(221, 221, 221);'])[3]")
+    public WebElement strengthBarSeviye4;
 
-    @FindBy(xpath = "(//li[@class=‘point’])[5]")
-    WebElement trengthBarSeviye5;
-
-
+    @FindBy(xpath = "(//li[@style='background-color: rgb(0, 255, 0);'])[5]")
+    public WebElement strengthBarSeviye5;
 
 }
