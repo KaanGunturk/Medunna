@@ -10,31 +10,31 @@ Feature: US_003 Registration sayfasında güçlü şifre girilmeli ve "Password 
   Güçlü bir parola için şifre en az 7 karakterden oluşmalıdır."
 
 
-    Given Kullanici medunna.com adresine gider
+    Given YS Kullanici medunna.com adresine gider
 
-    And Kullanici Profil butonuna tiklar
+    And YS Kullanici Profil butonuna tiklar
 
-    And Kullanici Register butonuna tiklar
+    And YS Kullanici Register butonuna tiklar
 
-    Then Kullanici New password kutusuna en az bir kucuk harfli sifre girer
+    Then YS Kullanici New password kutusuna en az bir kucuk harfli sifre girer
 
-    And Password strength seviyesinin degistigi test edilir
+    And YS Password strength seviyesinin degistigi test edilir
 
-    Then Kullanici New password kutusuna en az bir buyuk harfli sifre girer
+    Then YS Kullanici New password kutusuna en az bir buyuk harfli sifre girer
 
-    And Password strength seviyesinin degistigi test edilir
+    And YS Password strength seviyesinin degistigi test edilir
 
-    Then Kullanici New password kutusuna en az bir rakamli sifre girer
+    Then YS Kullanici New password kutusuna en az bir rakamli sifre girer
 
-    And Password strength seviyesinin degistigi test edilir
+    And YS Password strength seviyesinin degistigi test edilir
 
-    Then Kullanici New password kutusuna en az bir ozel karakterli sifre girer
+    Then YS Kullanici New password kutusuna en az bir ozel karakterli sifre girer
 
-    And Password strength seviyesinin degistigi test edilir
+    And YS Password strength seviyesinin degistigi test edilir
 
-    Then Kullanici New password kutusuna en az yedi karakterli bir sifre girer
+    Then YS Kullanici New password kutusuna en az yedi karakterli bir sifre girer
 
-    And Password strength seviyesinin guclu oldugu test edilir
+    And YS Password strength seviyesinin guclu oldugu test edilir
 
   @US_004
   Scenario: TC_001 "Giriş yapmak için başarı mesajını doğrulayan, geçerli bir kullanıcı adı ve şifre olmalıdır.
@@ -43,27 +43,27 @@ Feature: US_003 Registration sayfasında güçlü şifre girilmeli ve "Password 
   "You don't have an account yet? Register a new account" seçeneği olmalı
   "Cancel"" seçeneği olmalı"
 
-  Given Kullanici medunna.com adresine gider
+  Given YS Kullanici medunna.com adresine gider
 
-  Then Kullanici Profil butonuna tiklar
+  Then YS Kullanici Profil butonuna tiklar
 
-  And Kullanici Sign in butonuna tiklar
+  And YS Kullanici Sign in butonuna tiklar
 
-  Then Remember me kutusunun gorunurlulugu kontrol edilir
+  Then YS Remember me kutusunun gorunurlulugu kontrol edilir
 
-  And Did you forget your password? butonunun gorunurlulugu test edilir
+  And YS Did you forget your password? butonunun gorunurlulugu test edilir
 
-  And 'You don't have an account yet? Register a new account' butonunun gorunurlulugu test edilir
+  And YS 'You don't have an account yet? Register a new account' butonunun gorunurlulugu test edilir
 
-  And Cancel butonunun gorunurlulugu test edilir
+  And YS Cancel butonunun gorunurlulugu test edilir
 
-  Then Kullanici Username kutusuna gecerli kullanici adi girer
+  Then YS Kullanici Username kutusuna gecerli kullanici adi girer
 
-  And Kullanici Password kutusuna gecerli sifre girer
+  And YS Kullanici Password kutusuna gecerli sifre girer
 
-  And Kullanici Sign in butonuna tiklar
+  And YS Kullanici ikinci Sign in butonuna tiklar
 
-  And Basarili giris mesajinin gorunurlulugu test edilir
+  And YS Basarili giris mesajinin gorunurlulugu test edilir
 
 
 
