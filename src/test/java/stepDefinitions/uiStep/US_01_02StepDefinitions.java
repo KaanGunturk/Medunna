@@ -6,18 +6,24 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import pages.US_01_02Page;
+import utilities.Authentication;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static io.restassured.RestAssured.given;
+
 public class US_01_02StepDefinitions {
     US_01_02Page page = new US_01_02Page();
     Faker faker = new Faker();
+    Response response;
 
 
 
@@ -102,24 +108,22 @@ public class US_01_02StepDefinitions {
         page.lastName.sendKeys(faker.name().lastName());
     }
 
-    @And("Swagger ile tum kayıt bilgileri alınır")
-    public void swaggerIleTumKayıtBilgileriAlınır() {
 
-    }
-
-    @And("Swigger ile tum kayıt bilgileri doğrulanabilmeli")
-    public void swiggerIleTumKayıtBilgileriDoğrulanabilmeli() {
-
-    }
 
     @And("Api ile kayıtlı kişiler listesi oluşturulur.")
     public void apiIleKayıtlıKişilerListesiOluşturulur() {
+        String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZWFsdGhwcm9qZWN0dGVhbTU0IiwiYXV0aCI6IlJPTEVfQURNSU4iLCJleHAiOjE2NjAyNTM2OTd9.2KYl8Kcpu4NTvqhuJzY8re-FoG_rZZumjY-_O1DkpQuhyYAbMIZ03SQ805BcMMM1ZctS61R_njStuyzjFuDH_Q";
+        response = given().headers("Authorization",
+                        "Bearer " + token,
+                        "Content-Type",
+                        ContentType.JSON, "Accept", ContentType.JSON)
+                .when().
+                get("https://medunna.com/api/staff");
+        response.then().assertThat().statusCode(200);
+        response.prettyPrint();
     }
 
-    @And("Api ile kayıtlı kişiler doğrulanabilmeli")
-    public void apiIleKayıtlıKişilerDoğrulanabilmeli() {
 
-    }
 
     @And("DB ile SSN kimlikleri doğrulanabilmeli")
     public void dbIleSSNKimlikleriDoğrulanabilmeli() {
@@ -136,10 +140,7 @@ public class US_01_02StepDefinitions {
        page.userName.sendKeys(faker.name().username());
     }
 
-    @And("Kullanıcı adı api ile kontrol edilip doğrulanabilmeli")
-    public void kullanıcıAdıApiIleKontrolEdilipDoğrulanabilmeli() {
 
-    }
 
     @And("Kullanıcı email butonuna tıklayabilmeli")
     public void kullanıcıEmailButonunaTıklayabilmeli() {
