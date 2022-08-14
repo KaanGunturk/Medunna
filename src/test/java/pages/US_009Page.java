@@ -107,6 +107,24 @@ public class US_009Page {
     @FindBy(xpath = "//td[text()='27605']")
     public WebElement arananHastaId;
 
+    @FindBy(xpath="//tbody/tr/td[1]")
+    public WebElement tablePhone;
+    @FindBy(xpath="//tbody/tr/td[2]")
+    public WebElement tableEmail;
+    @FindBy(xpath="//tbody/tr/td[3]")
+    public WebElement tableGender;
+    @FindBy(xpath="//tbody/tr/td[4]")
+    public WebElement tableBlood;
+    @FindBy(xpath="//tbody/tr/td[5]")
+    public WebElement tableAddress;
+    @FindBy(xpath="//tbody/tr/td[6]")
+    public WebElement tableDescription;
+    @FindBy(xpath="//tbody/tr/td[7]")
+    public WebElement tableDate;
     @FindBy(xpath="//tbody/tr/td[8]")
-    public WebElement firstNameTable;
+    public WebElement tableuser;
+    @FindBy(xpath="//tbody/tr/td[9]")
+    public WebElement tableCountry;
+    @FindBy(xpath="//tbody/tr/td[10]")
+    public WebElement tableState;
 }
