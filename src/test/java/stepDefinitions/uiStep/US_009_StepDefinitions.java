@@ -72,25 +72,61 @@ public class US_009_StepDefinitions {
         Assert.assertTrue(us009Page.hastaBilgileriGuncellemeStateSelectMenuElementi.isEnabled());
 
     }
-    @Then("Kullanici Patient SSN kısmına hastanın SSN bilgisini girer")
-    public void kullanici_patient_ssn_kısmına_hastanın_ssn_bilgisini_girer() throws InterruptedException {
+    @Then("YG Kullanici Patient SSN kısmına hastanın SSN bilgisini girer")
+    public void yg_kullanici_patient_ssn_kısmına_hastanın_ssn_bilgisini_girer() throws InterruptedException {
         us009Page.patientsTableSSNsearchTextBox.sendKeys("587-45-8880");
         Thread.sleep(1000);
-
-
     }
+
     @Then("Kullanici Ilgili hastanın yanındaki view butonuna tıklar")
     public void kullanici_ılgili_hastanın_yanındaki_view_butonuna_tıklar() {
-        if (us009Page.noPatientsFoundAlert.isDisplayed()){
-            us009Page.patientsTableSSNsearchTextBox.sendKeys(ReusableMethods.createSSN());
-        }
+
         us009Page.patientsTableHastaViewElementi.click();
     }
     @Then("Kullanici kayit bilgilerinin gorunur oldugunu test eder")
-    public void kullanici_kayit_bilgilerinin_gorunur_oldugunu_test_eder() {
-        us009Page.hastaBilgileriGuncellemeFirstNameTextBoxElementi.getText();
-        us009Page.hastaBilgileriGuncellemeLastNameTextBoxElementi.getText();
-        us009Page.hastaBilgileriGuncellemeBirthDateTextBoxElementi.getText();
+    public void kullanici_kayit_bilgilerinin_gorunur_oldugunu_test_eder() throws InterruptedException {
+        String deger1=us009Page.tablePhone.getText();
+        System.out.println(deger1);
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger1.isBlank());
+
+        String deger2=us009Page.tableEmail.getText();
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger2.isBlank());
+
+        String deger3=us009Page.tableGender.getText();
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger3.isBlank());
+
+        String deger4=us009Page.tableBlood.getText();
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger4.isBlank());
+
+        String deger5=us009Page.tableAddress.getText();
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger5.isBlank());
+
+        String deger6=us009Page.tableDescription.getText();
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger6.isBlank());
+
+        String deger7=us009Page.tableDate.getText();
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger7.isBlank());
+
+        String deger8=us009Page.tableuser.getText();
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger8.isBlank());
+
+        String deger9=us009Page.tableCountry.getText();
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger9.isBlank());
+
+        String deger10=us009Page.tableState.getText();
+        Thread.sleep(1000);
+        Assert.assertFalse("alan bos",deger10.isBlank());
+
+
 
     }
     @Then("Kullanici Tabloda bilgilerini düzenlenmek istedigi hastanın yanındaki edit butonuna tıklar")
@@ -116,9 +152,12 @@ public class US_009_StepDefinitions {
         String firstNameText=us009Page.hastaBilgileriGuncellemeFirstNameTextBoxElementi.getText();
         Thread.sleep(1000);
         Assert.assertTrue("",firstNameText.isBlank());
-
     }
 
+    @Then("KG sayfayi kapatir")
+    public void kg_sayfayi_kapatir() {
+        Driver.closeDriver();
+    }
 
 
 
