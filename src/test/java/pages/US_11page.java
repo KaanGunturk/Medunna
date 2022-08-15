@@ -25,10 +25,10 @@ public class US_11page {
     @FindBy (xpath = "//button[@type='submit']")
     public WebElement ikinciSignin;
 
-    @FindBy (xpath = "//button[@type='submit']")
+    @FindBy (xpath = "//li[@id='entity-menu']")
     public WebElement myPages;
 
-    @FindBy (xpath = "(//*[text()='My Appointments'])[1]")
+    @FindBy (xpath = "(//*[@id=\"entity-menu\"]/div/a[1]")
     public WebElement myAppointments;
 
     @FindBy (xpath = "//*[text()='Edit']")
@@ -64,7 +64,7 @@ public class US_11page {
     @FindBy (xpath = "//textarea[@name='description']")
     public WebElement description;
 
-    @FindBy (xpath = "//select[@name='status']")
+    @FindBy (xpath = "//select[@id='appointment-status']")
     public WebElement statusselect;
 
     @FindBy (xpath = "//button[@id='save-entity']")
