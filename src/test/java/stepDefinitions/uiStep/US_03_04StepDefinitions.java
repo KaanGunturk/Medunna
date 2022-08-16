@@ -5,13 +5,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.asserts.SoftAssert;
-import pages.US_003_004Page;
+import pages.US_03_04Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 
-public class US_003_004StepDefinitions {
-    US_003_004Page page = new US_003_004Page();
+public class US_03_04StepDefinitions {
+    US_03_04Page page = new US_03_04Page();
 
     static SoftAssert softAssert = new SoftAssert();
     static JavascriptExecutor jse=(JavascriptExecutor) Driver.getDriver();

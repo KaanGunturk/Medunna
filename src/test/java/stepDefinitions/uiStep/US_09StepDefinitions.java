@@ -3,16 +3,14 @@ package stepDefinitions.uiStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.US_009Page;
+import pages.US_09Page;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
-public class US_009_StepDefinitions {
+public class US_09StepDefinitions {
 
-    US_009Page us009Page = new US_009Page();
+    US_09Page us009Page = new US_09Page();
 
 
     @Given("Kullanici {string} anasayfasinda")

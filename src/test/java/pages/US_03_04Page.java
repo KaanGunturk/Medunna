@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class US_003_004Page {
-    public US_003_004Page(){
+public class US_03_04Page {
+    public US_03_04Page(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -16,7 +16,7 @@ public class US_003_004Page {
     @FindBy(xpath = "//*[text()='Sign in']")
     public WebElement signInButonu;
 
-    @FindBy(xpath = "//*[@id=\"username\"]")
+    @FindBy(xpath = "//*[@id='username']")
     public WebElement usernameTextBox;
 
     @FindBy(xpath = "//*[@id=\"password\"]")
@@ -64,5 +64,13 @@ public class US_003_004Page {
 
     @FindBy(xpath = "(//li[@style='background-color: rgb(0, 255, 0);'])[5]")
     public WebElement strengthBarSeviye5;
+
+    @FindBy(xpath = "//div[@class='modal fade show']")
+    public WebElement negatifTestDogrulama;
+
+    @FindBy(xpath = "//div[@id='root']")
+    public WebElement pozitifTestDogrulama;
+
+
 
 }

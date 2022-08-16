@@ -3,18 +3,13 @@ package stepDefinitions.uiStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import net.bytebuddy.asm.Advice;
-import org.openqa.selenium.Keys;
-import pages.US_08_Page;
+import pages.US_08Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.util.Random;
-import java.util.RandomAccess;
+public class US_08StepDefinitions {
 
-public class US_08_StepDefinitions {
-
-    US_08_Page page=new US_08_Page();
+    US_08Page page=new US_08Page();
 
     // ----- TC_01 ----- \\
 

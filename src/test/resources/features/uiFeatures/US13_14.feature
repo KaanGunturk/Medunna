@@ -1,4 +1,4 @@
-@tumu
+
 Feature:US_013_014Physician "Test Results" işlemleri yapabilmeli
 
 

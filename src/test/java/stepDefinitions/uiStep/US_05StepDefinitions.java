@@ -9,15 +9,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.US_005Page;
+import pages.US_05Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.time.Duration;
 
-public class US_005StepDefinitions {
+public class US_05StepDefinitions {
 
-    US_005Page us_005Page = new US_005Page();
+    US_05Page us_005Page = new US_05Page();
     Actions actions = new Actions(Driver.getDriver());
 
     @Given("kullanici {string} anasayfasinda")

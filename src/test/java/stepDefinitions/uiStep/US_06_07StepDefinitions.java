@@ -4,15 +4,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import pages.US_06_07;
+import pages.US_06_07Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 import static org.junit.Assert.assertTrue;
 
-public class US06_07 {
+public class US_06_07StepDefinitions {
 
-    US_06_07 us_06_07page=new US_06_07();
+    US_06_07Page us_06_07page=new US_06_07Page();
 
     @Given("medunna sayfasında")
     public void medunna_sayfasında() {

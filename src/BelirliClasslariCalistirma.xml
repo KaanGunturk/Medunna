@@ -1,9 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="istenen classları calıstırma">
+<suite name="class calistirma" >
     <test name="classlar">
         <classes>
-            <class name="testler.day16_notations.C03_Priority"></class>
-            <class name="testler.day17_pom.C01_YeniDrverIlkClass"></class>
+            <class name="runners.E2E"></class>
 
         </classes>
     </test>

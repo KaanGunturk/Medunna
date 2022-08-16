@@ -7,12 +7,12 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class US10_US12_ {
+public class US_10_12Page {
 
 
 
 
-    public US10_US12_() {
+    public US_10_12Page() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }

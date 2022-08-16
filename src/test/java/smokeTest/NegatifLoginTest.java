@@ -3,29 +3,35 @@ package smokeTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import pages.US_01_02Page;
+import pages.US_03_04Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 public class NegatifLoginTest {
 
-   /* BrcPage brcPage=new BrcPage();
+     US_03_04Page us_03_04Page=new US_03_04Page();
 
     @Test
     public void test01() {
 
-        Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
 
-        brcPage.ilkLoogin1.click();
-        brcPage.emailTextBox.sendKeys(ConfigReader.getProperty("brcValidEmail"));
-        brcPage.password.sendKeys(ConfigReader.getProperty("brcWrongPassword"));
+        us_03_04Page.profilButonu.click();
+        us_03_04Page.signInButonu.click();
+        us_03_04Page.usernameTextBox.sendKeys(ConfigReader.getProperty("validUserName"));
+        us_03_04Page.passwordTextBox.sendKeys(ConfigReader.getProperty("wrongPassword"));
 
-        brcPage.login2.click();
+        us_03_04Page.signInPageSignInButonu.click();
 
-        Assert.assertTrue(brcPage.login2.isDisplayed());
+        Assert.assertTrue(us_03_04Page.negatifTestDogrulama.isDisplayed());
+
 
         Driver.closeDriver();
 
 
-
-*/
+    }
 }
