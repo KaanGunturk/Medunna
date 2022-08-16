@@ -110,25 +110,6 @@ public class US_01_02StepDefinitions {
 
 
 
-    @And("Api ile kayıtlı kişiler listesi oluşturulur.")
-    public void apiIleKayıtlıKişilerListesiOluşturulur() {
-        String token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZWFsdGhwcm9qZWN0dGVhbTU0IiwiYXV0aCI6IlJPTEVfQURNSU4iLCJleHAiOjE2NjAyNTM2OTd9.2KYl8Kcpu4NTvqhuJzY8re-FoG_rZZumjY-_O1DkpQuhyYAbMIZ03SQ805BcMMM1ZctS61R_njStuyzjFuDH_Q";
-        response = given().headers("Authorization",
-                        "Bearer " + token,
-                        "Content-Type",
-                        ContentType.JSON, "Accept", ContentType.JSON)
-                .when().
-                get("https://medunna.com/api/staff");
-        response.then().assertThat().statusCode(200);
-        response.prettyPrint();
-    }
-
-
-
-    @And("DB ile SSN kimlikleri doğrulanabilmeli")
-    public void dbIleSSNKimlikleriDoğrulanabilmeli() {
-    }
-
     //US_02_TC_01
     @And("Kullanıcı Username butonuna tıklar")
     public void kullanıcıUsernameButonunaTıklar() {
@@ -164,9 +145,7 @@ public class US_01_02StepDefinitions {
 
     }
 
-    @And("Kullanıcının girdiği email api ile doğrulanmalı")
-    public void kullanıcınınGirdiğiEmailApiIleDoğrulanmalı() {
-    }
+
 
 
 }
