@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="tym testleri calıstırma">
+    <test name="regression">
+        <packages>
+            <package name="page.*"></package>
+        </packages>
+    </test>
+</suite>
