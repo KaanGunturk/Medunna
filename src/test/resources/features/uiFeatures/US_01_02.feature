@@ -13,8 +13,6 @@ Feature: US_01_02 Kayıt olmak için SSN, Firstname,Lastname,Email ve Username  
     And Kullanıcı first name kutusuna gecerli first name girer
     And Kullanıcı last name kutusuna tıklar.
     And Kullanıcı gecerli bir "first name" girer.
-    And Api ile kayıtlı kişiler listesi oluşturulur.
-    And DB ile SSN kimlikleri doğrulanabilmeli
 
   @US_02_TC_01
   Scenario: Kayıt olmak için email ve username bilgileri girilebilmelidir.
@@ -26,4 +24,4 @@ Feature: US_01_02 Kayıt olmak için SSN, Firstname,Lastname,Email ve Username  
     And Kullanıcı email butonuna tıklayabilmeli
     And kullanıcı "@" ve ". " i,saretleri iceren email girmeli
     And Kullanıcı email butonunu bos bırakmamalı
-    And Kullanıcının girdiği email api ile doğrulanmalı
+
