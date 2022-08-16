@@ -7,11 +7,12 @@ import pages.US_01_02Page;
 import pages.US_03_04Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class NegatifLoginTest {
+public class NegatifLoginTest extends TestBaseRapor {
 
      US_03_04Page us_03_04Page=new US_03_04Page();
 

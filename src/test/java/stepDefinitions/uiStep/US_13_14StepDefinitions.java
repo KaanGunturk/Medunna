@@ -73,7 +73,7 @@ public class US_13_14StepDefinitions {
 
     @And("ZH Physician acilan sayfadaki istenen hastanin edit butonun tiklar")
     public void ZHphysicianAcilanSayfadakiIstenenHastaninEditButonunTiklar() {
-        page.showTestResultsTestOlanEditButonu2.click();
+        page.myInpatientsEditButonu.click();
     }
 
     @And("ZH Physician Show Test Results butonuna tiklar")

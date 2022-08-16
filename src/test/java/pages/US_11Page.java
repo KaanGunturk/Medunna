@@ -28,7 +28,7 @@ public class US_11Page {
     @FindBy (xpath = "//li[@id='entity-menu']")
     public WebElement myPages;
 
-    @FindBy (xpath = "(//*[@id=\"entity-menu\"]/div/a[1]")
+    @FindBy (xpath = "(//*[text()='My Appointments'])[1]")
     public WebElement myAppointments;
 
     @FindBy (xpath = "//*[text()='Edit']")

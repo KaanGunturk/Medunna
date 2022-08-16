@@ -1,7 +1,8 @@
+
 Feature: US_003 Registration sayfasında güçlü şifre girilmeli ve "Password strength" seviyeleri görülebilmelidir.
   US_004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır.
 
-  @US_003
+
   Scenario: TC_001 "Daha güçlü şifre için
   en az 1 küçük harf olmalı ve "Password strength:" seviyesinin değiştiği görülebilmelidir.
   Şifre en az 1 büyük harf içermeli ve "Password strength:" seviyesinin değiştiği görülebilmelidir.
@@ -64,6 +65,8 @@ Feature: US_003 Registration sayfasında güçlü şifre girilmeli ve "Password 
   And YS Kullanici ikinci Sign in butonuna tiklar
 
   And YS Basarili giris mesajinin gorunurlulugu test edilir
+
+  And kullanici sayfayi kapatir
 
 
 

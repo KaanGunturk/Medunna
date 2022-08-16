@@ -1,3 +1,4 @@
+
 Feature: US_01_02 Kayıt olmak için SSN, Firstname,Lastname,Email ve Username  bilgileri girilebilmelidir.
 
   @US_01_TC_01
