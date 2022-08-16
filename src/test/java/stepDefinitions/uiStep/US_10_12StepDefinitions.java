@@ -1,22 +1,20 @@
 package stepDefinitions.uiStep;
 
-import hooks.Hooks;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import pages.US10_US12_;
+import pages.US_10_12Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class US10_US12 {
+public class US_10_12StepDefinitions {
 
-    US10_US12_ page = new US10_US12_();
+    US_10_12Page page = new US_10_12Page();
 
 
     @Given("Doktor Medunna adresine gider")

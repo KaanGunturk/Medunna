@@ -1,4 +1,4 @@
-@tumu
+@1
 Feature: US10 Doktor Randevulari
 
 

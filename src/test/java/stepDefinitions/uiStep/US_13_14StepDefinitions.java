@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.US_013_014Page;
+import pages.US_13_14Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -20,9 +20,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 
-public class US13_14StepDefinitions {
+public class US_13_14StepDefinitions {
 
-      US_013_014Page page=new US_013_014Page();
+      US_13_14Page page=new US_13_14Page();
 
       //***************ORTAK KISIM***************
     @Given("ZH Physician Medunna adresine gider")

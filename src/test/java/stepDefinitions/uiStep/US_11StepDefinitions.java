@@ -1,18 +1,17 @@
 package stepDefinitions.uiStep;
 
 import io.cucumber.java.en.*;
-import org.checkerframework.checker.units.qual.C;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import pages.US_11page;
+import pages.US_11Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US_11StepDefinitions {
 
-US_11page US11page= new US_11page();
+US_11Page US11page= new US_11Page();
 Actions act = new Actions(Driver.getDriver());
 
 

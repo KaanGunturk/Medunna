@@ -2,7 +2,7 @@
 <suite name="tym testleri calıstırma">
     <test name="regression">
         <packages>
-            <package name="testler.*"></package>
+            <package name="page.*"></package>
         </packages>
     </test>
 </suite>
