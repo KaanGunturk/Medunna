@@ -41,8 +41,7 @@ Actions act = new Actions(Driver.getDriver());
     }
     @Then("HIMy Appointments tiklar")
     public void my_appointments_tiklar() {
-        Driver.getDriver().get(ConfigReader.getProperty("myApp"));
-
+      US11page.myAppointments.click();
     }
     @Then("HIEdit tiklar")
     public void edit_tiklar() {US11page.edit.click();
@@ -98,6 +97,7 @@ Actions act = new Actions(Driver.getDriver());
         act.sendKeys(Keys.PAGE_UP).perform();
         act.sendKeys(Keys.PAGE_UP).perform();
         Thread.sleep(3000);
+        act.sendKeys(Keys.PAGE_DOWN).perform();
         US11page.statusselect.click();
         Assert.assertEquals(US11page.statusselect.getAttribute("value"),"PENDING");
         //Assert.assertEquals(US11page.statusselect.getAttribute("value"),"COMPLETED");

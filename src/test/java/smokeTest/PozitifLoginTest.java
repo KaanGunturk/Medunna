@@ -6,8 +6,9 @@ import org.testng.annotations.Test;
 import pages.US_03_04Page;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
-public class PozitifLoginTest {
+public class PozitifLoginTest extends TestBaseRapor {
 
     US_03_04Page us_03_04Page = new US_03_04Page();
 
@@ -15,6 +16,7 @@ public class PozitifLoginTest {
     public void test01() {
 
         Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
+        extentTest=extentReports.createTest("Pozitif Login","Gecerli username ve sifre ile giris yapabilir");
 
         us_03_04Page.profilButonu.click();
         us_03_04Page.signInButonu.click();

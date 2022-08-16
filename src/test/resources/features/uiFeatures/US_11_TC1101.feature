@@ -1,4 +1,4 @@
-@2
+
 Feature: US_11 "My Appointments" Physician (Doctor) tarafından düzenlenebilmeli
 
   Scenario: US_11_TC1101
