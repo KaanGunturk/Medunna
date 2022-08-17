@@ -29,28 +29,33 @@ public class US_01_02StepDefinitions {
 
     //US01_TC_01
     @Given("kullanici Medunna adresine gider")
-    public void physicianMedunnaAdresineGider() {
+    public void physicianMedunnaAdresineGider() throws InterruptedException {
         Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
+
+        Thread.sleep(2000);
     }
 
     @Then("Kullanıcı profil isaretine tıklanır.")
-    public void kullanıcıProfilIsaretineTıklanır() {
+    public void kullanıcıProfilIsaretineTıklanır() throws InterruptedException {
         page.kullaniciSembolu.click();
+        Thread.sleep(2000);
     }
 
 
     @And("Register butonuna tıklanır.")
-    public void registerButonunaTıklanır() {
+    public void registerButonunaTıklanır() throws InterruptedException {
         page.register.click();
+        Thread.sleep(2000);
     }
 
     @And("SSN bolumune tıklar")
-    public void ssnBolumuneTıklar() {
+    public void ssnBolumuneTıklar() throws InterruptedException {
         page.ssn.click();
+        Thread.sleep(2000);
     }
 
     @And("SSN bolumune {int}. ve {int}. rakamdan sonra {string} girer")
-    public void ssnBolumuneVeRakamdanSonraGirer(int arg0, int arg1, String arg2) {
+    public void ssnBolumuneVeRakamdanSonraGirer(int arg0, int arg1, String arg2) throws InterruptedException {
 
         int ilk = faker.number().numberBetween(0, 9);
         int ikinci = faker.number().numberBetween(0, 9);
@@ -78,71 +83,80 @@ public class US_01_02StepDefinitions {
         for (int i = 0; i < ssnNuarasi.size(); i++) {
             page.ssn.sendKeys(ssnNuarasi.get(i));
         }
+        Thread.sleep(2000);
 
     }
 
     @And("SSN bolumune {int} rakam girer")
-    public void ssnBolumuneRakamGirer(int arg0) {
+    public void ssnBolumuneRakamGirer(int arg0) throws InterruptedException {
         Assert.assertTrue(page.ssn.isEnabled());
+        Thread.sleep(2000);
     }
 
     @And("Kullanıcı first name kutusuna tıklar.")
-    public void kullanıcıFirstNameKutusunaTıklar() {
+    public void kullanıcıFirstNameKutusunaTıklar() throws InterruptedException {
         page.firstName.click();
+        Thread.sleep(2000);
     }
 
     @And("Kullanıcı first name kutusuna gecerli first name girer")
-    public void kullanıcıFirstNameKutusunaGecerliFirstNameGirer() {
+    public void kullanıcıFirstNameKutusunaGecerliFirstNameGirer() throws InterruptedException {
         page.firstName.sendKeys(faker.name().firstName());
-
+        Thread.sleep(2000);
     }
 
     @And("Kullanıcı last name kutusuna tıklar.")
-    public void kullanıcıLastNameKutusunaTıklar() {
+    public void kullanıcıLastNameKutusunaTıklar() throws InterruptedException {
         page.lastName.click();
-
+        Thread.sleep(2000);
     }
 
     @And("Kullanıcı gecerli bir {string} girer.")
-    public void kullanıcıGecerliBirGirer(String arg0) {
+    public void kullanıcıGecerliBirGirer(String arg0) throws InterruptedException {
         page.lastName.sendKeys(faker.name().lastName());
+        Thread.sleep(2000);
     }
 
 
 
     //US_02_TC_01
     @And("Kullanıcı Username butonuna tıklar")
-    public void kullanıcıUsernameButonunaTıklar() {
+    public void kullanıcıUsernameButonunaTıklar() throws InterruptedException {
         page.userName.click();
+        Thread.sleep(2000);
     }
 
     @And("Kullanıcı boş bırakılmayan gecerli bir username girebilmeli")
-    public void kullanıcıBoşBırakılmayanGecerliBirUsernameGirebilmeli() {
+    public void kullanıcıBoşBırakılmayanGecerliBirUsernameGirebilmeli() throws InterruptedException {
        page.userName.sendKeys(faker.name().username());
+        Thread.sleep(2000);
     }
 
 
 
     @And("Kullanıcı email butonuna tıklayabilmeli")
-    public void kullanıcıEmailButonunaTıklayabilmeli() {
+    public void kullanıcıEmailButonunaTıklayabilmeli() throws InterruptedException {
         JavascriptExecutor jsx = (JavascriptExecutor)Driver.getDriver();
         jsx.executeScript("window.scrollBy(0,450)", "");
+        Thread.sleep(2000);
         page.email.click();
+        Thread.sleep(2000);
     }
 
     @And("kullanıcı {string} ve {string} i,saretleri iceren email girmeli")
-    public void kullanıcıVeISaretleriIcerenEmailGirmeli(String arg0, String arg1) {
+    public void kullanıcıVeISaretleriIcerenEmailGirmeli(String arg0, String arg1) throws InterruptedException {
         String email=faker.internet().emailAddress();
         page.email.sendKeys(email);
         if (!email.contains("@")){
             page.email.sendKeys(email);
         }
+        Thread.sleep(2000);
     }
 
     @And("Kullanıcı email butonunu bos bırakmamalı")
-    public void kullanıcıEmailButonunuBosBırakmamalı() {
+    public void kullanıcıEmailButonunuBosBırakmamalı() throws InterruptedException {
         Assert.assertTrue(page.email.isEnabled());
-
+        Thread.sleep(2000);
     }
 
 

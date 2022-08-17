@@ -1,4 +1,4 @@
-
+@1
 Feature: US_003 Registration sayfasında güçlü şifre girilmeli ve "Password strength" seviyeleri görülebilmelidir.
   US_004 Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir olmalıdır.
 
