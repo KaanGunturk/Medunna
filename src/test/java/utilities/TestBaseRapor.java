@@ -27,9 +27,9 @@ public abstract class TestBaseRapor {
 
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser"));
-        extentReports.setSystemInfo("Automation Engineer", "Mehmet");
+        extentReports.setSystemInfo("Automation Engineer", "team54");
         extentHtmlReporter.config().setDocumentTitle("Rapor");
-        extentHtmlReporter.config().setReportName("TestNG Reports");
+        extentHtmlReporter.config().setReportName("Selenium Reports");
     }
 
     @AfterMethod(alwaysRun = true)

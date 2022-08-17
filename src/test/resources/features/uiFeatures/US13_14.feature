@@ -4,7 +4,7 @@ Feature:US_013_014Physician "Test Results" işlemleri yapabilmeli
 
   Scenario: US13_TC01  Physician "Test Results" sonuclarini gorebilmeli
 
-    Given ZH Physician Medunna adresine gider
+    Given ZH "Physician" Medunna adresine gider
     And ZH Physician Sign in1 butonuna tiklar
     And ZH Physician username ve sifresini girer
     Then ZH Physician My Pages butonuna tiklar

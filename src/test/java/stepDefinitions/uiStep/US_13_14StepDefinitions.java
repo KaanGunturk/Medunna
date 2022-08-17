@@ -25,8 +25,9 @@ public class US_13_14StepDefinitions {
       US_13_14Page page=new US_13_14Page();
 
       //***************ORTAK KISIM***************
-    @Given("ZH Physician Medunna adresine gider")
-    public void ZHphysicianMedunnaAdresineGider() {
+
+    @Given("ZH {string} Medunna adresine gider")
+    public void zhMedunnaAdresineGider(String arg0) {
         Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
 
     }
@@ -246,4 +247,6 @@ public class US_13_14StepDefinitions {
     public void ZHsayfayiKapatir() {
         Driver.closeDriver();
     }
+
+
 }
