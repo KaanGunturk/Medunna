@@ -60,8 +60,10 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     Then edit icin dogrulama mesajinin gorundugunu test eder
 
 
-  Scenario:TC005 Admin, doktorun profil resmini sağlayabilir.
+  Scenario:TC005 Admin mevcut doktorları silebilir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    And admin "321-48-7891" SSN numarali kisiyi bulur ve idsinin "2051" oldugunu dogrular ve tiklar
+    And admin delete butonuna basar
+    And admin cikan uyari mesajinda delete butonuna basar
+    And admin delete icin dogrulama mesajinin gorundugunu test eder
     And admin doktorun resmini degistirebilir

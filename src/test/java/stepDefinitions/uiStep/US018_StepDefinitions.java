@@ -210,5 +210,4 @@ public class US018_StepDefinitions {
         Assert.assertTrue(ayberk.dogrulamaMesaji3.isDisplayed());
     }
 
-
 }
