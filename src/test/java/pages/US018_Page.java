@@ -72,6 +72,9 @@ public class US018_Page {
     @FindBy(xpath = "//*[text()='A new Physician is created with identifier 202913']")
     public WebElement dogrulamaMesaji2;
 
+    @FindBy(xpath = "//*[text()='A Physician is updated with identifier 202913']")
+    public WebElement dogrulamaMesaji3;
+
     @FindBy(xpath = "//*[text()='Save']")
     public WebElement saveButton;
 
@@ -87,5 +90,34 @@ public class US018_Page {
     @FindBy(id = "//thead//tr")
     public List<WebElement> doctorInfo;
 
+    @FindBy(id = "//input[@name='birthDate']")
+    public WebElement birthDate;
+
+    @FindBy(id = "//input[@id='physician-phone']")
+    public WebElement phone;
+
+    @FindBy(id = "//input[@name='adress']")
+    public WebElement adress;
+
+    @FindBy(xpath = "//select[@id='physician-gender']")
+    public WebElement genderDdm;
+
+    @FindBy(xpath = "//select[@id='physician-speciality']")
+    public WebElement specialityDdm;
+
+    @FindBy(id = "//input[@id='physician-description']")
+    public WebElement description;
+
+    @FindBy(id = "//input[@id='physician-examFee']")
+    public WebElement examFee;
+
+    @FindBy(xpath = "//select[@id='physician-country']")
+    public WebElement countryDdm;
+
+    @FindBy(xpath = "//input[@id='file_image']")
+    public WebElement dosyaSecButton;
+
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
+    public WebElement editButton;
 
 }
