@@ -11,8 +11,6 @@ public class US_15Page extends BasePage {
 
     public US_15Page()    { PageFactory.initElements(Driver.getDriver(),this); }
 
-
-    // -- > US005
     @FindBy (xpath = "(//img[@alt='Logo'])")               // <-- home page
     public WebElement homePageLogo;
     @FindBy(xpath = "(//span[text()='Make an'])")
@@ -269,4 +267,5 @@ public class US_15Page extends BasePage {
 
     @FindBy(xpath = "//dd[text()='USA']")
     public WebElement verifyCountryUSA;
+
 }
