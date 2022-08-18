@@ -75,6 +75,9 @@ public class US018_Page {
     @FindBy(xpath = "//*[text()='A Physician is updated with identifier 202913']")
     public WebElement dogrulamaMesaji3;
 
+    @FindBy(xpath = "//*[text()='A Physician is deleted with identifier 202943']")
+    public WebElement dogrulamaMesaji4;
+
     @FindBy(xpath = "//*[text()='Save']")
     public WebElement saveButton;
 
@@ -119,5 +122,11 @@ public class US018_Page {
 
     @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
     public WebElement editButton;
+
+    @FindBy(xpath = "(//a[@class='btn btn-danger btn-sm'])[1]")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//button[@id='jhi-confirm-delete-physician']")
+    public WebElement deleteButton2;
 
 }
