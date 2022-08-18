@@ -23,7 +23,7 @@ import static io.restassured.RestAssured.given;
 public class US_01_02StepDefinitions {
     US_01_02Page page = new US_01_02Page();
     Faker faker = new Faker();
-    Response response;
+
 
 
 
