@@ -11,28 +11,28 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin administration sekmesine basar
     And admin user management sekmesine basar
     And admin create a new user sekmesine basar
-    And admin login "ay3" firstname "ayberk3" lastname "ayberk3" mail "ayberk3@ayberk.com" SSN "343-39-9654" rol olarak doktor girer
+    And admin login "ay4" firstname "ayberk4" lastname "ayberk4" mail "ayberk4@ayberk.com" SSN "343-49-9654" rol olarak doktor girer
     And admin save tusuna basar
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     And admin create a new physician sekmesine basar
-    Then admin kayitli SSN "343-39-9654" girer ve dogrulama mesajinin geldigini test eder
+    Then admin kayitli SSN "343-49-9654" girer ve dogrulama mesajinin geldigini test eder
 
     #333-39-9658 manuel için kullanılan ssn
   Scenario:TC002 Kişilerin "firstname, lastname birth date .." bilgileri doldurulabilmeli.
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     And admin create a new physician sekmesine basar
-    Then admin kayitli SSN "343-39-9655" girer ve dogrulama mesajinin geldigini test eder
+    Then admin kayitli SSN "343-49-9654" girer ve dogrulama mesajinin geldigini test eder
     And admin use search check box tiklar
     #And admin tarih girer
-    And admin telefon "5555555555" girer
-    And admin adres "sparta zeus" girer
+    #And admin telefon "5555555555" girer
+    #And admin adres "sparta zeus" girer
     And admin cinsiyet belirler
     And admin uzmanlik belirler
-    And admin description "aaaaaayyyyyy" girer
-    And admin fotograf yukler
-    And admin "59" dolar ucret belirler
+    #And admin description "aaaaaayyyyyy" girer
+    #And admin fotograf yukler
+    #And admin "59" dolar ucret belirler
     And admin country secer
     And admin save tusuna basar
     Then dogrulama mesajinin gorundugunu test eder

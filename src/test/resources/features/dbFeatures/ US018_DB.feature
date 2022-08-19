@@ -1,8 +1,8 @@
-@US018api
+@US018db
 Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
 
   Scenario:TC007 DB kullanarak doktorlari dogrulayın
     Given Admin connects to the database
-    Then Admin gets the "*" from "jhi_user" table
-    And  verify "jhi_user" table "ssn" column contains "123-56-9424" data
+    And Admin gets the "select * from physician" table
+    Then  Admin set the expected data and verify it
     Then close the database connection
