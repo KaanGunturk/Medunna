@@ -1,7 +1,9 @@
+@US018api
 Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
 
   Scenario:TC006 API kullanarak doktorlari dogrulayın
-    Given Admin kayıtlı doktorlar listesi için get request yapar
+    Given Admin sets the path params to create test item
+    And Admin sets expected data
     Then Admin kayıtlı doktorlar listesini de-seralazition eder
 
   Scenario:TC007 DB kullanarak doktorlari dogrulayın
