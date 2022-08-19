@@ -5,10 +5,11 @@ public class User {
     private String createdBy;
     private String createdDate;
     private Integer id;
+    private String login;
     private String firstname;
     private String lastname;
     private String email;
-    private String activated;
+    private Boolean activated;
     private String langKey;
     private String imageUrl;
     private String resetDate;
@@ -17,10 +18,11 @@ public class User {
     public User() {
     }
 
-    public User(String createdBy, String createdDate, Integer id, String firstname, String lastname, String email, String activated, String langKey, String imageUrl, String resetDate, String ssn) {
+    public User(String createdBy, String createdDate, Integer id, String login, String firstname, String lastname, String email, Boolean activated, String langKey, String imageUrl, String resetDate, String ssn) {
         this.createdBy = createdBy;
         this.createdDate = createdDate;
         this.id = id;
+        this.login = login;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
@@ -55,6 +57,14 @@ public class User {
         this.id = id;
     }
 
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
     public String getFirstname() {
         return firstname;
     }
@@ -79,11 +89,11 @@ public class User {
         this.email = email;
     }
 
-    public String getActivated() {
+    public Boolean getActivated() {
         return activated;
     }
 
-    public void setActivated(String activated) {
+    public void setActivated(Boolean activated) {
         this.activated = activated;
     }
 
@@ -125,10 +135,11 @@ public class User {
                 "createdBy='" + createdBy + '\'' +
                 ", createdDate='" + createdDate + '\'' +
                 ", id=" + id +
+                ", login='" + login + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
-                ", activated='" + activated + '\'' +
+                ", activated=" + activated +
                 ", langKey='" + langKey + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", resetDate='" + resetDate + '\'' +
