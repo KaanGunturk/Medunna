@@ -84,16 +84,16 @@ public class US018_Page {
     @FindBy(xpath = "//*[text()='Search User']")
     public WebElement searchUser;
 
-    @FindBy(id = "searchSSN")
+    @FindBy(xpath = "//input[@id='searchSSN']")
     public WebElement searchSSN;
 
-    @FindBy(id = "useSSNSearch")
+    @FindBy(xpath = "//input[@id='useSSNSearch']")
     public WebElement useSSNSearchCheckBox;
 
     @FindBy(id = "//thead//tr")
     public List<WebElement> doctorInfo;
 
-    @FindBy(id = "//input[@name='birthDate']")
+    @FindBy(id = "//input[@id='physician1-birthDate']")
     public WebElement birthDate;
 
     @FindBy(id = "//input[@id='physician-phone']")
@@ -128,5 +128,9 @@ public class US018_Page {
 
     @FindBy(xpath = "//button[@id='jhi-confirm-delete-physician']")
     public WebElement deleteButton2;
+
+    @FindBy(xpath = "//tbody/tr[1]/td")
+    public List<WebElement> table;
+
 
 }

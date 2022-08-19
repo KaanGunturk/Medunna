@@ -15,12 +15,15 @@ import utilities.ReusableMethods;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class US018_StepDefinitions {
 
     US018_Page ayberk = new US018_Page();
 
     Actions actions = new Actions(Driver.getDriver());
+
+    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
     @Given("admin {string} anasayfasinda")
     public void admin_anasayfasinda(String baseUrl) {
@@ -96,6 +99,7 @@ public class US018_StepDefinitions {
 
     @And("admin save tusuna basar")
     public void adminSaveTusunaBasar() {
+        js.executeScript("arguments[0].scrollIntoView(true);", ayberk.saveButton);
         ayberk.saveButton.click();
     }
 
@@ -117,41 +121,48 @@ public class US018_StepDefinitions {
 
     @And("admin use search check box tiklar")
     public void adminUseSearchCheckBoxTiklar() {
-        ReusableMethods.waitForVisibility(ayberk.useSSNSearchCheckBox, 10);
         ayberk.useSSNSearchCheckBox.click();
+        ReusableMethods.waitFor(1);
     }
 
     @And("admin tarih girer")
     public void adminTarihGirer() {
-        ayberk.birthDate.sendKeys("18-12-1980");
+        js.executeScript("arguments[0].click();", ayberk.birthDate);
+        ayberk.birthDate.sendKeys("18121980");
+        ReusableMethods.waitFor(1);
     }
 
     @And("admin telefon {string} girer")
     public void adminTelefonGirer(String tel) {
         ayberk.phone.sendKeys(tel);
+        ReusableMethods.waitFor(1);
 
     }
 
     @And("admin adres {string} girer")
     public void adminAdresGirer(String address) {
         ayberk.adress.sendKeys(address);
+        ReusableMethods.waitFor(1);
     }
 
     @And("admin cinsiyet belirler")
     public void adminCinsiyetBelirler() {
         Select select = new Select(ayberk.genderDdm);
         select.selectByVisibleText("MALE");
+        ReusableMethods.waitFor(1);
     }
 
     @And("admin uzmanlik belirler")
     public void adminUzmanlikBelirler() {
         Select select = new Select(ayberk.specialityDdm);
         select.selectByVisibleText("Dermatology");
+        ReusableMethods.waitFor(1);
     }
 
     @And("admin description {string} girer")
     public void adminDescriptionGirer(String desc) {
         ayberk.description.sendKeys(desc);
+        ReusableMethods.waitFor(1);
     }
 
     @And("admin fotograf yukler")
@@ -185,6 +196,7 @@ public class US018_StepDefinitions {
 
     @And("admin {string} dolar ucret belirler")
     public void adminDolarUcretBelirler(String exam) {
+        js.executeScript("arguments[0].scrollIntoView(true);", ayberk.examFee);
         ayberk.examFee.sendKeys(exam);
     }
 
@@ -210,4 +222,13 @@ public class US018_StepDefinitions {
         Assert.assertTrue(ayberk.dogrulamaMesaji3.isDisplayed());
     }
 
+    @Then("admin bütün doktorların bilgilerinin görüldügünü test eder")
+    public void adminBütünDoktorlarınBilgilerininGörüldügünüTestEder() {
+        List<Object> expectedData = new List();
+        for (int i = 0; i < ayberk.table.size(); i++) {
+            System.out.println(ayberk.table.get(i).getText());
+            Assert.assertTrue(ayberk.table.get(i).isDisplayed());
+        }
+
+    }
 }

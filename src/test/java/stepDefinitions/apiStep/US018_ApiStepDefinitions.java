@@ -7,10 +7,7 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.US018Pojo.ParentPojo;
 import pojos.US018Pojo.User;
-import utilities.ApiUtils;
-import utilities.Authentication;
-import utilities.ConfigReader;
-import utilities.JsonUtil;
+import utilities.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -148,6 +145,5 @@ public class US018_ApiStepDefinitions {
         Assert.assertEquals(expectedDataMap.get("imageContentType"), actualDataMap.get("imageContentType"));
 
     }
-
 
 }
