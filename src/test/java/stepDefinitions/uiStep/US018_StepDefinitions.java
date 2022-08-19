@@ -224,7 +224,7 @@ public class US018_StepDefinitions {
 
     @Then("admin bütün doktorların bilgilerinin görüldügünü test eder")
     public void adminBütünDoktorlarınBilgilerininGörüldügünüTestEder() {
-        List<Object> expectedData = new List();
+        //List<Object> expectedData = new List();
         for (int i = 0; i < ayberk.table.size(); i++) {
             System.out.println(ayberk.table.get(i).getText());
             Assert.assertTrue(ayberk.table.get(i).isDisplayed());
