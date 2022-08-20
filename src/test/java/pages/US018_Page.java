@@ -66,6 +66,12 @@ public class US018_Page {
     @FindBy(xpath = "//select[@id='authorities']")
     public WebElement roleDdm;
 
+    @FindBy(xpath = "//*[text()='3']")
+    public WebElement ucuncuSayfaButton;
+
+    @FindBy(xpath = "//*[text()='Internal server error.']")
+    public WebElement internalServerErrorMesaji;
+
     @FindBy(xpath = "//*[text()='User found with search SSN']")
     public WebElement dogrulamaMesaji;
 
@@ -78,8 +84,14 @@ public class US018_Page {
     @FindBy(xpath = "//*[text()='A Physician is deleted with identifier 202943']")
     public WebElement dogrulamaMesaji4;
 
+    @FindBy(xpath = "//*[text()='A Physician is updated with identifier 10501']")
+    public WebElement dogrulamaMesaji5;
+
     @FindBy(xpath = "//*[text()='Save']")
     public WebElement saveButton;
+
+    @FindBy(xpath = "(//*[text()='Medunna'])[1]")
+    public WebElement medunnaText;
 
     @FindBy(xpath = "//*[text()='Search User']")
     public WebElement searchUser;
@@ -90,16 +102,22 @@ public class US018_Page {
     @FindBy(xpath = "//input[@id='useSSNSearch']")
     public WebElement useSSNSearchCheckBox;
 
-    @FindBy(id = "//thead//tr")
+    @FindBy(xpath = "//thead//tr")
     public List<WebElement> doctorInfo;
 
-    @FindBy(id = "//input[@id='physician1-birthDate']")
+    @FindBy(xpath = "//input[@name='firstName']")
+    public WebElement firstName;
+
+    @FindBy(xpath = "//input[@name='lastName']")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//input[@name='birthDate']")
     public WebElement birthDate;
 
-    @FindBy(id = "//input[@id='physician-phone']")
+    @FindBy(xpath = "//input[@name='phone']")
     public WebElement phone;
 
-    @FindBy(id = "//input[@name='adress']")
+    @FindBy(xpath = "//input[@name='adress']")
     public WebElement adress;
 
     @FindBy(xpath = "//select[@id='physician-gender']")
@@ -108,10 +126,13 @@ public class US018_Page {
     @FindBy(xpath = "//select[@id='physician-speciality']")
     public WebElement specialityDdm;
 
-    @FindBy(id = "//input[@id='physician-description']")
+    @FindBy(xpath = "//select[@id='physician-bloodGroup']")
+    public WebElement bloodGroupDdm;
+
+    @FindBy(xpath = "//input[@id='physician-description']")
     public WebElement description;
 
-    @FindBy(id = "//input[@id='physician-examFee']")
+    @FindBy(xpath = "//input[@id='physician-examFee']")
     public WebElement examFee;
 
     @FindBy(xpath = "//select[@id='physician-country']")
@@ -120,7 +141,7 @@ public class US018_Page {
     @FindBy(xpath = "//input[@id='file_image']")
     public WebElement dosyaSecButton;
 
-    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[5]")
     public WebElement editButton;
 
     @FindBy(xpath = "(//a[@class='btn btn-danger btn-sm'])[1]")
@@ -131,6 +152,9 @@ public class US018_Page {
 
     @FindBy(xpath = "//tbody/tr[1]/td")
     public List<WebElement> table;
+
+    @FindBy(xpath = "//td[1]")
+    public List<WebElement> idTableList;
 
 
 }

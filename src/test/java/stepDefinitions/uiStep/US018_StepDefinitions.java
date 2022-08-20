@@ -4,7 +4,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.US018_Page;
@@ -16,12 +19,16 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class US018_StepDefinitions {
 
     US018_Page ayberk = new US018_Page();
 
     Actions actions = new Actions(Driver.getDriver());
+
+    Select select;
 
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
@@ -63,6 +70,7 @@ public class US018_StepDefinitions {
     public void admin_physician_sekmesine_basar() {
         ReusableMethods.waitForVisibility(ayberk.physician, 10);
         ayberk.physician.click();
+        ReusableMethods.waitFor(1);
     }
 
 
@@ -99,8 +107,9 @@ public class US018_StepDefinitions {
 
     @And("admin save tusuna basar")
     public void adminSaveTusunaBasar() {
-        js.executeScript("arguments[0].scrollIntoView(true);", ayberk.saveButton);
-        ayberk.saveButton.click();
+        js.executeScript("arguments[0].scrollIntoView(true);", ayberk.medunnaText);
+        ReusableMethods.waitForClickablility(ayberk.saveButton, 10);
+        js.executeScript("arguments[0].click();", ayberk.saveButton);
     }
 
     @And("admin create a new physician sekmesine basar")
@@ -117,6 +126,7 @@ public class US018_StepDefinitions {
         ayberk.searchUser.click();
         ReusableMethods.waitForVisibility(ayberk.dogrulamaMesaji, 10);
         Assert.assertTrue(ayberk.dogrulamaMesaji.isDisplayed());
+        ayberk.dogrulamaMesaji.click();
     }
 
     @And("admin use search check box tiklar")
@@ -125,15 +135,17 @@ public class US018_StepDefinitions {
         ReusableMethods.waitFor(1);
     }
 
-    @And("admin tarih girer")
-    public void adminTarihGirer() {
-        js.executeScript("arguments[0].click();", ayberk.birthDate);
-        ayberk.birthDate.sendKeys("18121980");
+    @And("admin tarih {string} girer")
+    public void adminTarihGirer(String tarih) {
+        ayberk.birthDate.sendKeys(tarih);
         ReusableMethods.waitFor(1);
     }
 
     @And("admin telefon {string} girer")
     public void adminTelefonGirer(String tel) {
+        ayberk.phone.click();
+        ayberk.phone.clear();
+        ReusableMethods.waitFor(1);
         ayberk.phone.sendKeys(tel);
         ReusableMethods.waitFor(1);
 
@@ -141,32 +153,48 @@ public class US018_StepDefinitions {
 
     @And("admin adres {string} girer")
     public void adminAdresGirer(String address) {
+        ayberk.adress.click();
+        ayberk.adress.clear();
+        ReusableMethods.waitFor(1);
         ayberk.adress.sendKeys(address);
         ReusableMethods.waitFor(1);
     }
 
-    @And("admin cinsiyet belirler")
-    public void adminCinsiyetBelirler() {
-        Select select = new Select(ayberk.genderDdm);
-        select.selectByVisibleText("MALE");
+    @And("admin cinsiyet {string} belirler")
+    public void adminCinsiyetBelirler(String gender) {
+        select = new Select(ayberk.genderDdm);
+        select.selectByVisibleText(gender);
         ReusableMethods.waitFor(1);
     }
 
-    @And("admin uzmanlik belirler")
-    public void adminUzmanlikBelirler() {
-        Select select = new Select(ayberk.specialityDdm);
-        select.selectByVisibleText("Dermatology");
+    @And("admin uzmanlik {string} belirler")
+    public void adminUzmanlikBelirler(String speciality) {
+        select = new Select(ayberk.specialityDdm);
+        select.selectByVisibleText(speciality);
+        ReusableMethods.waitFor(1);
+    }
+
+    @And("admin kan grubu {string} secer")
+    public void adminKanGrubuSecer(String bloodType) {
+        select = new Select(ayberk.bloodGroupDdm);
+        select.selectByVisibleText(bloodType);
         ReusableMethods.waitFor(1);
     }
 
     @And("admin description {string} girer")
     public void adminDescriptionGirer(String desc) {
+        ayberk.description.clear();
         ayberk.description.sendKeys(desc);
         ReusableMethods.waitFor(1);
     }
 
     @And("admin fotograf yukler")
     public void adminFotografYukler() throws AWTException {
+
+        String path = "C:\\Users\\ayber\\Desktop\\images.jpg";
+        ayberk.dosyaSecButton.sendKeys(path);
+
+        /*
         // User clicks "Dosya Seçin" button
         ayberk.dosyaSecButton.click();
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
@@ -192,43 +220,162 @@ public class US018_StepDefinitions {
         // sonra ürün ekleme ekranındaki fotoğrafın stringi var zaten
         // tek yapman gerekn assert çalışıyor mu ona bak
         // locateler değişebiliyor aklında bulunsun
+
+         */
     }
 
     @And("admin {string} dolar ucret belirler")
     public void adminDolarUcretBelirler(String exam) {
         js.executeScript("arguments[0].scrollIntoView(true);", ayberk.examFee);
+        ayberk.examFee.clear();
         ayberk.examFee.sendKeys(exam);
+        ReusableMethods.waitFor(1);
     }
 
-    @And("admin country secer")
-    public void adminCountrySecer() {
+    @And("admin country {string} secer")
+    public void adminCountrySecer(String country) {
         Select select = new Select(ayberk.countryDdm);
-        select.selectByVisibleText("THE UNITED KINGDOM");
+        select.selectByVisibleText(country);
+        ReusableMethods.waitFor(1);
     }
 
-    @Then("dogrulama mesajinin gorundugunu test eder")
-    public void dogrulamaMesajininGorundugunuTestEder() {
+    @And("admin idsi {string} olan doktorun edit butona tiklar")
+    public void adminIdsiOlanDoktorunEditButonaTiklar(String id) {
 
-        Assert.assertTrue(ayberk.dogrulamaMesaji.isDisplayed());
+        int count = 1;
+        List<WebElement> idList = ayberk.idTableList;
+        System.out.println(idList.size());
+
+
+        for (WebElement i : idList) {
+            if (i.getText().equals(id)) break;
+            count++;
+        }
+
+        WebElement editlenecekDoktor = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[18]/div/a[3]"));
+        js.executeScript("arguments[0].click();", editlenecekDoktor);
+
+        ReusableMethods.waitFor(1);
+
+
     }
 
-    @And("admin edit butona tiklar")
-    public void adminEditButonaTiklar() {
-        ayberk.editButton.click();
+    @And("admin idsi {string} olan doktorun delete butonuna basar")
+    public void adminIdsiOlanDoktorunDeleteButonunaBasar(String id) {
+        int count = 1;
+        List<WebElement> idList = ayberk.idTableList;
+        System.out.println(idList.size());
+
+
+        for (WebElement i : idList) {
+            if (i.getText().equals(id)) break;
+            count++;
+        }
+
+        WebElement editlenecekDoktor = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[18]/div/a[3]"));
+        js.executeScript("arguments[0].click();", editlenecekDoktor);
+
+        ReusableMethods.waitFor(1);
     }
+
 
     @Then("edit icin dogrulama mesajinin gorundugunu test eder")
     public void editIcinDogrulamaMesajininGorundugunuTestEder() {
+        ReusableMethods.waitForVisibility(ayberk.dogrulamaMesaji3, 10);
         Assert.assertTrue(ayberk.dogrulamaMesaji3.isDisplayed());
     }
 
     @Then("admin bütün doktorların bilgilerinin görüldügünü test eder")
     public void adminBütünDoktorlarınBilgilerininGörüldügünüTestEder() {
-        //List<Object> expectedData = new List();
-        for (int i = 0; i < ayberk.table.size(); i++) {
-            System.out.println(ayberk.table.get(i).getText());
-            Assert.assertTrue(ayberk.table.get(i).isDisplayed());
+        List<Object> expectedDataList = new ArrayList<>();
+        expectedDataList.add(2051);
+        expectedDataList.add("321-48-7891");
+        expectedDataList.add("Kena");
+        expectedDataList.add("Sauer");
+        expectedDataList.add("01/01/80 02:00");
+        expectedDataList.add("2345566677");
+        expectedDataList.add("FEMALE");
+        expectedDataList.add("O+");
+        expectedDataList.add("593 Wintheiser Unions, North Tamishamouth, NV 74219");
+        expectedDataList.add("ANESTHESIOLOGY");
+        expectedDataList.add(500);
+        expectedDataList.add("Prof Dr");
+        expectedDataList.add("14/12/21 13:40");
+        expectedDataList.add(" image/jpeg, 105 850 bytes");
+        expectedDataList.add("team88_user1");
+        expectedDataList.add("ABD");
+        expectedDataList.add("California");
+        expectedDataList.add("View\nEdit\nDelete");
+
+        List<WebElement> actualDataList = ayberk.table;
+
+        int count = 0;
+        System.out.println("Expected size " + expectedDataList.size());
+        System.out.println("Actual size " + actualDataList.size());
+
+        for (int i = 0; i < expectedDataList.size(); i++) {
+            for (int j = 0; j < actualDataList.size(); j++) {
+                if (expectedDataList.get(i).equals(actualDataList.get(j).getText())) {
+                    Assert.assertEquals(expectedDataList.get(i), actualDataList.get(j).getText());
+                }
+            }
         }
 
+/*
+        System.out.println("Expected uzunluk: " + expectedDataList.size());
+        System.out.println("Actual uzunluk: " + actualDataList.size());
+
+        System.out.println();
+
+        System.out.println("ExpectedDataList");
+        for (int i = 0; i < expectedDataList.size(); i++) {
+            System.out.print(expectedDataList.get(i) + " ");
+        }
+
+        System.out.println();
+
+        System.out.println("ActualDataList");
+        System.out.println("ActualDataList uzunluk: " + actualDataList.size());
+        for (int i = 0; i < actualDataList.size(); i++) {
+            System.out.print(actualDataList.get(i).getText() + " ");
+        }
+
+ */
+
+
     }
+
+    @Then("admin idsi {string} doktorun editlendiginin dogrulama mesajini teyit eder")
+    public void adminIdsiDoktorunEditlendigininDogrulamaMesajiniTeyitEder(String id) {
+        WebElement dogrulamaMesaji = Driver.getDriver().findElement(By.xpath("//*[text()='A Physician is updated with identifier " + id + "']"));
+        ReusableMethods.waitForVisibility(dogrulamaMesaji, 10);
+        Assert.assertTrue(dogrulamaMesaji.isDisplayed());
+
+    }
+
+    @Then("admin idsi {string} doktorun silindiginin dogrulama mesajini teyit eder")
+    public void adminIdsiDoktorunSilindigininDogrulamaMesajiniTeyitEder(String id) {
+        //A Physician is deleted with identifier 205441
+        WebElement dogrulamaMesaji = Driver.getDriver().findElement(By.xpath("//*[text()='A Physician is deleted with identifier " + id + "']"));
+        Assert.assertTrue(dogrulamaMesaji.isDisplayed());
+    }
+
+    @And("admin {int} sayfaya gecer")
+    public void adminSayfayaGecer(int sayfaNo) {
+        js.executeScript("arguments[0].scrollIntoView(true);", ayberk.medunnaText);
+        WebElement sayfaNoButton = Driver.getDriver().findElement(By.xpath("//*[text()='" + sayfaNo + "']"));
+        js.executeScript("arguments[0].click();", sayfaNoButton);
+        ReusableMethods.waitFor(1);
+    }
+
+    @And("admin cikan uyari mesajinda delete butonuna basar")
+    public void adminCikanUyariMesajindaDeleteButonunaBasar() {
+        ReusableMethods.waitForVisibility(ayberk.deleteButton2, 10);
+        ayberk.deleteButton2.click();
+        ReusableMethods.waitFor(1);
+
+
+    }
+
+
 }
