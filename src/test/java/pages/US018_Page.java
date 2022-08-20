@@ -156,5 +156,8 @@ public class US018_Page {
     @FindBy(xpath = "//td[1]")
     public List<WebElement> idTableList;
 
+    @FindBy(xpath = "//td[3]")
+    public List<WebElement> firstnameTableList;
+
 
 }

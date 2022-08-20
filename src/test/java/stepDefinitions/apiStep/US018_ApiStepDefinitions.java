@@ -92,7 +92,7 @@ public class US018_ApiStepDefinitions {
         expectedDataMap.put("createdBy", "infotech");
         expectedDataMap.put("createdDate", "2022-08-19T08:40:16.200281Z");
         expectedDataMap.put("id", 203613);
-        expectedDataMap.put("firstName", "Sachiko");
+        expectedDataMap.put("firstName", "Sachik");
         expectedDataMap.put("lastName", "Sanford");
         expectedDataMap.put("birthDate", "1979-12-31T23:00:00Z");
         expectedDataMap.put("phone", "2345566677");

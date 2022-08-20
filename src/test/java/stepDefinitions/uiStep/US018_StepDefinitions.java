@@ -32,6 +32,8 @@ public class US018_StepDefinitions {
 
     JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
+    static String alinacakIdStr;
+
     @Given("admin {string} anasayfasinda")
     public void admin_anasayfasinda(String baseUrl) {
         Driver.getDriver().get(ConfigReader.getProperty(baseUrl));
@@ -260,6 +262,26 @@ public class US018_StepDefinitions {
 
     }
 
+    @And("admin firstname {string} olan doktorun edit butona tiklar")
+    public void adminFirstnameOlanDoktorunEditButonaTiklar(String firstname) {
+
+        int count = 1;
+        List<WebElement> nameList = ayberk.firstnameTableList;
+        System.out.println(nameList.size());
+
+
+        for (WebElement i : nameList) {
+            if (i.getText().equals(firstname)) break;
+            count++;
+        }
+
+        WebElement editlenecekDoktor = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[18]/div/a[2]"));
+        js.executeScript("arguments[0].click();", editlenecekDoktor);
+
+        ReusableMethods.waitFor(1);
+
+    }
+
     @And("admin idsi {string} olan doktorun delete butonuna basar")
     public void adminIdsiOlanDoktorunDeleteButonunaBasar(String id) {
         int count = 1;
@@ -278,11 +300,39 @@ public class US018_StepDefinitions {
         ReusableMethods.waitFor(1);
     }
 
+    @And("admin firstname {string} olan doktorun delete butona tiklar")
+    public void adminFirstnameOlanDoktorunDeleteButonaTiklar(String firstname) {
+
+        int count = 1;
+        List<WebElement> nameList = ayberk.firstnameTableList;
+        System.out.println(nameList.size());
+
+
+        for (WebElement i : nameList) {
+            if (i.getText().equals(firstname)) break;
+            count++;
+        }
+
+        WebElement editlenecekDoktor = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[18]/div/a[3]"));
+        js.executeScript("arguments[0].click();", editlenecekDoktor);
+
+        ReusableMethods.waitFor(1);
+
+    }
+
 
     @Then("edit icin dogrulama mesajinin gorundugunu test eder")
     public void editIcinDogrulamaMesajininGorundugunuTestEder() {
-        ReusableMethods.waitForVisibility(ayberk.dogrulamaMesaji3, 10);
-        Assert.assertTrue(ayberk.dogrulamaMesaji3.isDisplayed());
+        WebElement dogrulamaMesaji = Driver.getDriver().findElement(By.xpath("//*[text()='A Physician is updated with identifier " + alinacakIdStr + "']"));
+        ReusableMethods.waitForVisibility(dogrulamaMesaji, 10);
+        Assert.assertTrue(dogrulamaMesaji.isDisplayed());
+    }
+
+    @Then("create icin dogrulama mesajinin gorundugunu test eder")
+    public void createIcinDogrulamaMesajininGorundugunuTestEder() {
+        WebElement dogrulamaMesaji = Driver.getDriver().findElement(By.xpath("//*[text()='A Physician is updated with identifier " + alinacakIdStr + "']"));
+        ReusableMethods.waitForVisibility(dogrulamaMesaji, 10);
+        Assert.assertTrue(dogrulamaMesaji.isDisplayed());
     }
 
     @Then("admin bütün doktorların bilgilerinin görüldügünü test eder")
@@ -345,18 +395,17 @@ public class US018_StepDefinitions {
 
     }
 
-    @Then("admin idsi {string} doktorun editlendiginin dogrulama mesajini teyit eder")
-    public void adminIdsiDoktorunEditlendigininDogrulamaMesajiniTeyitEder(String id) {
-        WebElement dogrulamaMesaji = Driver.getDriver().findElement(By.xpath("//*[text()='A Physician is updated with identifier " + id + "']"));
-        ReusableMethods.waitForVisibility(dogrulamaMesaji, 10);
-        Assert.assertTrue(dogrulamaMesaji.isDisplayed());
-
-    }
-
     @Then("admin idsi {string} doktorun silindiginin dogrulama mesajini teyit eder")
     public void adminIdsiDoktorunSilindigininDogrulamaMesajiniTeyitEder(String id) {
         //A Physician is deleted with identifier 205441
         WebElement dogrulamaMesaji = Driver.getDriver().findElement(By.xpath("//*[text()='A Physician is deleted with identifier " + id + "']"));
+        Assert.assertTrue(dogrulamaMesaji.isDisplayed());
+    }
+
+    @Then("delete icin dogrulama mesajinin gorundugunu test eder")
+    public void deleteIcinDogrulamaMesajininGorundugunuTestEder() {
+        WebElement dogrulamaMesaji = Driver.getDriver().findElement(By.xpath("//*[text()='A Physician is deleted with identifier " + alinacakIdStr + "']"));
+        ReusableMethods.waitForVisibility(dogrulamaMesaji, 10);
         Assert.assertTrue(dogrulamaMesaji.isDisplayed());
     }
 
@@ -378,4 +427,21 @@ public class US018_StepDefinitions {
     }
 
 
+    @And("admin firstname {string} olan doktorun idisini alir")
+    public void adminFirstnameOlanDoktorunIdisiniAlir(String firstname) {
+
+        int count = 1;
+        List<WebElement> firstnameList = ayberk.firstnameTableList;
+        System.out.println(firstnameList.size());
+
+
+        for (WebElement i : firstnameList) {
+            if (i.getText().equals(firstname)) break;
+            count++;
+        }
+
+        WebElement alinacakId = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[1]"));
+        alinacakIdStr = alinacakId.getText();
+
+    }
 }
