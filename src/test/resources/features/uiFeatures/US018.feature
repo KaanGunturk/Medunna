@@ -51,6 +51,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
   Scenario:TC004 Admin, Doktorların bilgilerini düzenleyebilir.
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
+    And admin 23 sayfaya gecer
     And admin 22 sayfaya gecer
     And admin firstname "ayberk6" olan doktorun idisini alir
     And admin firstname "ayberk6" olan doktorun edit butona tiklar
