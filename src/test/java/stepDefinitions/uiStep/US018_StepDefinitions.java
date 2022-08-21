@@ -444,4 +444,22 @@ public class US018_StepDefinitions {
         alinacakIdStr = alinacakId.getText();
 
     }
+
+    @And("admin logini {string} olan doktorun idisini alir")
+    public void adminLoginiOlanDoktorunIdisiniAlir(String login) {
+        int count = 1;
+        List<WebElement> loginList = ayberk.loginTableList;
+        System.out.println(loginList.size());
+
+
+        for (WebElement i : loginList) {
+            if (i.getText().equals(loginList)) break;
+            count++;
+        }
+
+        WebElement alinacakId = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[1]"));
+        alinacakIdStr = alinacakId.getText();
+    }
+
+
 }

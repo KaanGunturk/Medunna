@@ -12,21 +12,23 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin administration sekmesine basar
     And admin user management sekmesine basar
     And admin create a new user sekmesine basar
-    And admin login "ay8" firstname "ayberk8" lastname "ayberk8" mail "ayberk8@ayberk.com" SSN "383-69-9654" rol olarak doktor girer
+    And admin login "ay9" firstname "ayberk9" lastname "ayberk9" mail "ayberk9@ayberk.com" SSN "393-69-9654" rol olarak doktor girer
     And admin save tusuna basar
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     And admin create a new physician sekmesine basar
-    Then admin kayitli SSN "353-49-9654" girer ve dogrulama mesajinin geldigini test eder
+    Then admin kayitli SSN "393-69-9654" girer ve dogrulama mesajinin geldigini test eder
 
     #333-39-9658 manuel için kullanılan ssn
   Scenario:TC002 Kişilerin "firstname, lastname birth date .." bilgileri doldurulabilmeli.
+    #And admin administration sekmesine basar
+    #And admin user management sekmesine basar
+    #And admin 531 sayfaya gecer
+    #And admin logini "ay9" olan doktorun idisini alir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    And admin 22 sayfaya gecer
-    And admin firstname "ayberk6" olan doktorun idisini alir
     And admin create a new physician sekmesine basar
-    Then admin kayitli SSN "353-69-9654" girer ve dogrulama mesajinin geldigini test eder
+    Then admin kayitli SSN "393-69-9654" girer ve dogrulama mesajinin geldigini test eder
     And admin use search check box tiklar
     And admin tarih "10.10.1980" girer
     And admin telefon "5555655555" girer
@@ -52,9 +54,8 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     And admin 23 sayfaya gecer
-    And admin 22 sayfaya gecer
-    And admin firstname "ayberk6" olan doktorun idisini alir
-    And admin firstname "ayberk6" olan doktorun edit butona tiklar
+    And admin firstname "ayberk9" olan doktorun idisini alir
+    And admin firstname "ayberk9" olan doktorun edit butona tiklar
     And admin tarih "10.11.1981" girer
     And admin telefon "5355557575" girer
     And admin adres "Meow York" girer
@@ -71,9 +72,9 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
   Scenario:TC005 Admin mevcut doktorları silebilir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    And admin 22 sayfaya gecer
-    And admin firstname "ayberk6" olan doktorun idisini alir
-    And admin firstname "ayberk6" olan doktorun delete butona tiklar
+    And admin 23 sayfaya gecer
+    And admin firstname "ayberk9" olan doktorun idisini alir
+    And admin firstname "ayberk9" olan doktorun delete butona tiklar
     And admin cikan uyari mesajinda delete butonuna basar
     Then delete icin dogrulama mesajinin gorundugunu test eder
 
