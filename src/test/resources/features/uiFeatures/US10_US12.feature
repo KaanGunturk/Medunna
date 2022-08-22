@@ -2,7 +2,7 @@
 Feature: US10 Doktor Randevulari
 
 
-  Scenario: US_TC_001 Doktor randevu listesini ve zaman dilimlerini "My Appointments" sekmesinden görebilmelidir.
+  Scenario: US10_TC_001 Doktor randevu listesini ve zaman dilimlerini "My Appointments" sekmesinden görebilmelidir.
 
     Given Doktor Medunna adresine gider
 
