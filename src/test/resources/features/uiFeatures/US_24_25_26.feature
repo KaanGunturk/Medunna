@@ -1,3 +1,4 @@
+@tumu
 Feature: US_24 My Appointments (Randevular) (Patient)
 
   Scenario: US_24 TC01 Test sonuclari
@@ -25,18 +26,14 @@ Feature: US_24 My Appointments (Randevular) (Patient)
   Scenario: US25_TC01 My Appointments by Patient in the account
     Given ZH Hasta medunna adresi gider
     And ZH Kullanici Make an Appointment butonuna tiklar
-    And ZH Kullanici First Name girer
-    And ZH Kullanici Last Name girer
-    And ZH Kullanıcı SSN numarası (kayıtlı SSN) girer
-    And ZH Kullanici Email adresi girer
-    And ZH Kullanıcı telefon numarası girer
-    And ZH Kullanici randevu icin tarih secer
+    And ZH Kullanici gerekli bilgileri girer
     Then ZH Kullanici Send an Appointment Request butonuna tiklar
-    Then ZH Kullanici randevunun olustugunu dogrular
+
 
 
   Scenario: US26_TC01 İletişim Mesajı (Contact messages)
     Given ZH Hasta medunna adresi gider
+    And ZH Hasta content butonuna tiklar
     And ZH Kullanici mesaj icin gerekli olan name kutucugu doldurur
     And ZH Kullanici mesaj icin gerekli olan email kutucugu doldurur
     And ZH Kullanici mesaj icin gerekli olan Subject kutucugu doldurur
