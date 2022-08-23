@@ -110,6 +110,8 @@ public class US018_ApiStepDefinitions {
         expectedDataMap.put("imageContentType", null);
         System.out.println(expectedDataMap);
 
+        //response = ApiUtils.postRequestMapper(Authentication.generateToken("healthprojectteam54", "AiGAYmJSJp.EN98"), "https://medunna.com/api/physicians/203613", expectedDataMap);
+
         Map<String, Object> actualDataMap = response.as(HashMap.class);
         System.out.println(actualDataMap);
 
