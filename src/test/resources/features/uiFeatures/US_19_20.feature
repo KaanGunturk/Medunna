@@ -10,9 +10,9 @@ Feature: US_19 Admin Olarak; Yeni Staff (Personel) Oluşturma,Güncelleme,Silme
     And ht Username girer
     And ht Password girer
     And ht Sign in butonuna tıklar
-    And ht Never i secer
     And ht Tems&titles tıkalr
     And ht Staff i secer
+    And ht tum ssn numaralarını alir.
     And ht Create a new staff e tıklar
     And ht Ssn numarası girer
     And ht Use search tıklar
@@ -28,7 +28,6 @@ Feature: US_19 Admin Olarak; Yeni Staff (Personel) Oluşturma,Güncelleme,Silme
       And ht Username girer
       And ht Password girer
       And ht Sign in butonuna tıklar
-      And ht Never i secer
       And ht Tems&titles tıkalr
       And ht Staff i secer
       And ht view butonundan herhangi birini görüntüler
@@ -45,7 +44,6 @@ Feature: US_19 Admin Olarak; Yeni Staff (Personel) Oluşturma,Güncelleme,Silme
         And ht Username girer
         And ht Password girer
         And ht Sign in butonuna tıklar
-        And ht Never i secer
         And ht Administration a tıklar
         And ht Usere managment secer
         And ht Kayıtlı kişilerin görünürlüğünü kontrol eder

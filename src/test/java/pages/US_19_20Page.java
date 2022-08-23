@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
@@ -23,10 +24,10 @@ public class US_19_20Page {
     @FindBy(xpath = "//input[@name='password']")
     public WebElement Password;
 
-    @FindBy(xpath = "//*[@class='dropdown-item']")
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
     public WebElement signInClick;
 
-    @FindBy(xpath = "(//*[@class='dropdown nav-item'])[1]")
+    @FindBy(xpath = "(//*[@class='d-flex align-items-center dropdown-toggle nav-link'])[1]")
     public WebElement temsTitles;
 
     @FindBy(xpath = "(//*[*='Staff'])[1]")
@@ -37,6 +38,8 @@ public class US_19_20Page {
 
     @FindBy(xpath = "//input[@id='searchSSN']")
     public WebElement staffssn;
+
+
 
     @FindBy(xpath = "//input[@name='useSSNSearch']")
     public WebElement useSearch;
@@ -110,7 +113,7 @@ public class US_19_20Page {
     @FindBy(xpath = "//*[@id='staff-country']")
     public WebElement staffcountry;
 
-    @FindBy(xpath = "//*[@id='staff-cstate']")
+    @FindBy(xpath = "//select[@id='staff-cstate']")
     public WebElement Staffcity;
 
     @FindBy(xpath = "//button[@id='save-entity']")
@@ -122,7 +125,7 @@ public class US_19_20Page {
     @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[57]")
     public WebElement deleteButton;
 
-    @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[57]")
+    @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[]")
     public WebElement viewButton;
 
     @FindBy(xpath = "//*[@class='svg-inline--fa fa-user-plus fa-w-20 ']")
