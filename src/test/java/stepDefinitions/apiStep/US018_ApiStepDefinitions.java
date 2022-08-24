@@ -20,7 +20,7 @@ public class US018_ApiStepDefinitions {
 
     @Given("Admin sends the GET request and gets the response with {string} endpoint")
     public void adminSendsTheGETRequestAndGetsTheResponseWithEndpoint(String endpoint) {
-        response = ApiUtils.getRequest(Authentication.generateToken("healthprojectteam54", "AiGAYmJSJp.EN98"), "https://medunna.com/api/physicians/203613");
+        response = ApiUtils.getRequest(Authentication.generateToken("healthprojectteam54", "AiGAYmJSJp.EN98"), "https://medunna.com/api/physicians/219366");
         response.prettyPrint();
     }
 
@@ -76,36 +76,36 @@ public class US018_ApiStepDefinitions {
 
         Map<String, Object> userData = new HashMap<String, Object>();
         userData.put("createdBy", "anonymousUser");
-        userData.put("createdDate", "2022-07-24T16:41:39.742157Z");
-        userData.put("id", 138370);
-        userData.put("login", "staff0102");
-        userData.put("firstName", "Staff01");
-        userData.put("lastName", "Staff02");
-        userData.put("email", "hdkajdka@email.com");
+        userData.put("createdDate", "2022-08-23T17:20:58.102852Z");
+        userData.put("id", 221729);
+        userData.put("login", "team52doktor");
+        userData.put("firstName", "team52doktor");
+        userData.put("lastName", "team52doktor");
+        userData.put("email", "abdurrahman.kurin@gmail.com");
         userData.put("activated", true);
         userData.put("langKey", "en");
         userData.put("imageUrl", null);
         userData.put("resetDate", null);
-        userData.put("ssn", "123-02-1234");
+        userData.put("ssn", "123-31-6446");
 
         Map<String, Object> expectedDataMap = new HashMap<>();
-        expectedDataMap.put("createdBy", "infotech");
-        expectedDataMap.put("createdDate", "2022-08-19T08:40:16.200281Z");
-        expectedDataMap.put("id", 203613);
-        expectedDataMap.put("firstName", "Sachik");
-        expectedDataMap.put("lastName", "Sanford");
-        expectedDataMap.put("birthDate", "1979-12-31T23:00:00Z");
-        expectedDataMap.put("phone", "2345566677");
-        expectedDataMap.put("gender", "FEMALE");
-        expectedDataMap.put("bloodGroup", "Opositive");
-        expectedDataMap.put("adress", "Suite 114 2194 Miss Street, O'Connerfurt, IA 34865");
+        expectedDataMap.put("createdBy", "team52");
+        expectedDataMap.put("createdDate", "2022-08-23T17:35:32.635587Z");
+        expectedDataMap.put("id", 219366);
+        expectedDataMap.put("firstName", "abdurrahman");
+        expectedDataMap.put("lastName", "abdurrahman");
+        expectedDataMap.put("birthDate", "2000-08-22T21:00:00Z");
+        expectedDataMap.put("phone", "5444187654");
+        expectedDataMap.put("gender", "MALE");
+        expectedDataMap.put("bloodGroup", "Apositive");
+        expectedDataMap.put("adress", "1 Bear Pl Unit 97045");
         expectedDataMap.put("description", "");
         expectedDataMap.put("user", userData);
-        expectedDataMap.put("speciality", "ANESTHESIOLOGY");
+        expectedDataMap.put("speciality", "ALLERGY_IMMUNOLOGY");
         expectedDataMap.put("appointments", null);
         expectedDataMap.put("country", null);
         expectedDataMap.put("cstate", null);
-        expectedDataMap.put("examFee", 500.00);
+        expectedDataMap.put("examFee", 350.00);
         expectedDataMap.put("image", "");
         expectedDataMap.put("imageContentType", null);
         System.out.println(expectedDataMap);
