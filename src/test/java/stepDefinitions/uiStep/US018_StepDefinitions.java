@@ -465,4 +465,8 @@ public class US018_StepDefinitions {
     }
 
 
+    @And("admin sayfayi kapatir")
+    public void adminSayfayiKapatir() {
+        Driver.closeDriver();
+    }
 }
