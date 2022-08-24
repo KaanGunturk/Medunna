@@ -52,6 +52,7 @@ public class US018_StepDefinitions {
 
     @Given("user gecerli {string} ve {string} ile giris yapar")
     public void user_gecerli_ve_ile_giris_yapar(String username, String password) {
+        ReusableMethods.waitFor(2);
         ayberk.usernameBox.sendKeys(ConfigReader.getProperty(username));
         ayberk.passwordBox.sendKeys(ConfigReader.getProperty(password));
         ReusableMethods.waitFor(2);
@@ -330,9 +331,10 @@ public class US018_StepDefinitions {
 
     @Then("create icin dogrulama mesajinin gorundugunu test eder")
     public void createIcinDogrulamaMesajininGorundugunuTestEder() {
-        WebElement dogrulamaMesaji = Driver.getDriver().findElement(By.xpath("//*[text()='A Physician is updated with identifier " + alinacakIdStr + "']"));
+        WebElement dogrulamaMesaji = Driver.getDriver().findElement(By.xpath("//div[@role='alert']"));
         ReusableMethods.waitForVisibility(dogrulamaMesaji, 10);
-        Assert.assertTrue(dogrulamaMesaji.isDisplayed());
+        String expectedDogrulamaMesaji = "A new Physician is created with identifier";
+        Assert.assertTrue(dogrulamaMesaji.getText().contains(expectedDogrulamaMesaji));
     }
 
     @Then("admin bütün doktorların bilgilerinin görüldügünü test eder")
@@ -453,12 +455,13 @@ public class US018_StepDefinitions {
 
 
         for (WebElement i : loginList) {
-            if (i.getText().equals(loginList)) break;
+            if (i.getText().equals(login)) break;
             count++;
         }
 
         WebElement alinacakId = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[1]"));
         alinacakIdStr = alinacakId.getText();
+        System.out.println(alinacakIdStr);
     }
 
 
