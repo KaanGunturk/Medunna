@@ -56,7 +56,6 @@ Feature: US_19 Admin Olarak; Yeni Staff (Personel) Oluşturma,Güncelleme,Silme
           And ht Username girer
           And ht Password girer
           And ht Sign in butonuna tıklar
-          And ht Never i secer
           And ht Administration a tıklar
           And ht Usere managment secer
           And ht Deavtivated olan kısımı activedet yapabilir

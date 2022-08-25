@@ -116,16 +116,16 @@ public class US_19_20Page {
     @FindBy(xpath = "//select[@id='staff-cstate']")
     public WebElement Staffcity;
 
-    @FindBy(xpath = "//button[@id='save-entity']")
+    @FindBy(xpath = "//*[@class='svg-inline--fa fa-save fa-w-14 ']")
     public WebElement saveButton;
 
-    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[19]")
+    @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])")
     public WebElement editButton;
 
-    @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[57]")
+    @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[6]")
     public WebElement deleteButton;
 
-    @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[]")
+    @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[1]")
     public WebElement viewButton;
 
     @FindBy(xpath = "//*[@class='svg-inline--fa fa-user-plus fa-w-20 ']")
@@ -151,6 +151,12 @@ public class US_19_20Page {
 
     @FindBy(xpath = "(//*[@class='d-none d-md-inline'])[60]")
     public WebElement  userManagmentdeleteButton;
+
+    @FindBy(xpath="(//th[@class='hand'])[2]")
+    public WebElement ssnNumber;
+
+    @FindBy(xpath = "//*[@class='svg-inline--fa fa-pencil-alt fa-w-16 ']")
+    public WebElement viewEditButton;
 
 
 

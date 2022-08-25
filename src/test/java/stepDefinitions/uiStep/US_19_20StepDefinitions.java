@@ -3,9 +3,11 @@ package stepDefinitions.uiStep;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+
 import pages.US_19_20Page;
 import utilities.ConfigReader;
 import utilities.Driver;
@@ -17,6 +19,8 @@ public class US_19_20StepDefinitions {
     Faker faker = new Faker();
     Random rnd = new Random();
     List<String> ssnNumber = new ArrayList<>();
+    JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+    Actions actions = new Actions(Driver.getDriver());
 
     //us_19_tc_01
     @When("ht Kullanıcı https:\\/\\/medunna.com adresine gidilir")
@@ -48,8 +52,9 @@ public class US_19_20StepDefinitions {
     }
 
     @And("ht Sign in butonuna tıklar")
-    public void htSignInButonunaTıklar() {
+    public void htSignInButonunaTıklar() throws InterruptedException {
         page.signInClick.click();
+        Thread.sleep(10000);
     }
 
     @And("ht Tems&titles tıkalr")
@@ -104,15 +109,14 @@ public class US_19_20StepDefinitions {
         page.temsTitles.click();
         page.staffButton.click();
         page.createnewStaff.click();
-        int ssnilk=faker.number().numberBetween(100,999);
-        int ssniki=faker.number().numberBetween(10,99);
-        int ssnson=faker.number().numberBetween(1000,9999);
-        page.staffssn.sendKeys(ssnilk+"-"+ssniki+"-"+ssnson);
+        int ssnilk = faker.number().numberBetween(100, 999);
+        int ssniki = faker.number().numberBetween(10, 99);
+        int ssnson = faker.number().numberBetween(1000, 9999);
+        page.staffssn.sendKeys(ssnilk + "-" + ssniki + "-" + ssnson);
         page.stafffirstName.sendKeys(faker.name().firstName());
         page.stafflastName.sendKeys(faker.name().lastName());
-        JavascriptExecutor jse = (JavascriptExecutor)Driver.getDriver();
         jse.executeScript("window.scrollBy(0,250)", "");
-        Date date=faker.date().birthday();
+        Date date = faker.date().birthday();
         page.birthDate.sendKeys(date.toString());
         page.phone.sendKeys("(336) 546-5245");
         page.gender.click();
@@ -137,51 +141,92 @@ public class US_19_20StepDefinitions {
 
     //us_19_tc_02
     @And("ht view butonundan herhangi birini görüntüler")
-    public void htViewButonundanHerhangiBiriniGörüntüler() {
+    public void htViewButonundanHerhangiBiriniGörüntüler() throws InterruptedException {
+
+
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollright = arguments[0].offsetWidth", page.viewButton);
+        page.viewButton.click();
+
 
     }
 
     @And("ht Edit butonuna tıklar")
-    public void htEditButonunaTıklar() {
+    public void htEditButonunaTıklar() throws InterruptedException {
+        Thread.sleep(1000);
+        page.editButton.click();
 
     }
 
     @And("ht Herhangi bir bilgiyi degistirir")
-    public void htHerhangiBirBilgiyiDegistirir() {
+    public void htHerhangiBirBilgiyiDegistirir() throws InterruptedException {
+
+        page.stafffirstName.sendKeys(faker.name().firstName());
+        Thread.sleep(1000);
+        jse.executeScript("arguments [0] .scrollIntoView ();", page.saveButton);
+        page.saveButton.click();
 
     }
 
     @And("ht Delete butonuna tıklar")
-    public void htDeleteButonunaTıklar() {
+    public void htDeleteButonunaTıklar() throws InterruptedException {
+        Thread.sleep(10000);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollright = arguments[0].offsetWidth", page.deleteButton);
+        page.deleteButton.click();
     }
 
     //us_20_tc_01
     @And("ht Administration a tıklar")
     public void htAdministrationATıklar() {
+        page.administration.click();
     }
 
     @And("ht Usere managment secer")
     public void htUsereManagmentSecer() {
-
+        page.userManagment.click();
     }
 
     @And("ht Kayıtlı kişilerin görünürlüğünü kontrol eder")
-    public void htKayıtlıKişilerinGörünürlüğünüKontrolEder() {
-
+    public void htKayıtlıKişilerinGörünürlüğünüKontrolEder() throws InterruptedException {
+        Thread.sleep(10000);
+        List<WebElement> kayitliKisilerElement = Driver.getDriver().findElements(By.xpath("//tbody/tr"));
+        List<String> kayitListesi = new ArrayList<>();
+        for (int i = 0; i < kayitliKisilerElement.size(); i++) {
+            kayitListesi.add(kayitliKisilerElement.get(i).getText());
+        }
+        Assert.assertTrue(!kayitListesi.isEmpty());
     }
 
     //US_20_TC_02
     @And("ht Deavtivated olan kısımı activedet yapabilir")
     public void htDeavtivatedOlanKısımıActivedetYapabilir() {
+        List<WebElement> liste=Driver.getDriver().findElements(By.xpath("//tbody/tr/td"));
+
+            for (int i = 0; i < liste.size(); i++) {
+                if(liste.get(i).getText()=="Deactivated"){
+                    liste.get(i).click();
+                }
+            }
+
     }
 
     @And("ht Profiles kısmından rol ataması yapar")
-    public void htProfilesKısmındanRolAtamasıYapar() {
+    public void htProfilesKısmındanRolAtamasıYapar() throws InterruptedException {
+        Thread.sleep(10000);
+      //  ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollright = arguments[0].offsetWidth", page.editButton);
+        page.editButton.click();
+        jse.executeScript("arguments [0] .scrollIntoView ();", page.userManagmentProfiles);
+        page.userManagmentProfiles.sendKeys(faker.name().title());
+        jse.executeScript("arguments [0] .scrollIntoView ();", page.saveButton);
+        page.saveButton.click();
+
 
     }
 
     @And("ht Herhangi bir kişinin delete butonuna tıklar")
     public void htHerhangiBirKişininDeleteButonunaTıklar() {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollright = arguments[0].offsetWidth", page.deleteButton);
+        page.deleteButton.click();
+
     }
 
 
