@@ -5,6 +5,8 @@ import io.restassured.response.Response;
 import pojos.ortakPojo.Registrant;
 
 
+import java.util.Map;
+
 import static io.restassured.RestAssured.given;
 
 public class ApiUtils {
@@ -35,6 +37,36 @@ public class ApiUtils {
                 ContentType.JSON,
                 "Accept",
                 ContentType.JSON).contentType(ContentType.JSON).body(registrant).when().put(endpoint);
+
+
+        return  response;
+
+    }
+
+    public static Response postRequestPojo(String token, String endpoint, Registrant registrant){
+
+        Response response = given().headers(
+                "Authorization",
+                "Bearer " + token,
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).contentType(ContentType.JSON).body(registrant).when().post(endpoint);
+
+
+        return  response;
+
+    }
+
+    public static Response postRequestMapper(String token, String endpoint, Map<String, Object> gonderecegimMap){
+
+        Response response = given().headers(
+                "Authorization",
+                "Bearer " + token,
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).contentType(ContentType.JSON).body(gonderecegimMap).when().post(endpoint);
 
 
         return  response;
