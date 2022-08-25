@@ -3,10 +3,13 @@ package utilities;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+/*
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+
+ */
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,7 +18,7 @@ public abstract class TestBaseRapor {
     protected static ExtentReports extentReports;
     protected static ExtentTest extentTest;
     protected static ExtentHtmlReporter extentHtmlReporter;
-     @BeforeTest(alwaysRun = true)
+  //   @BeforeTest(alwaysRun = true)
     public void setUpTest() {
         extentReports = new ExtentReports();
 
@@ -32,7 +35,7 @@ public abstract class TestBaseRapor {
         extentHtmlReporter.config().setReportName("Selenium Reports");
     }
 
-    @AfterMethod(alwaysRun = true)
+  /*  @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
         if (result.getStatus() == ITestResult.FAILURE) {
             String screenshotLocation = ReusableMethods.getScreenshot(result.getName());
@@ -45,8 +48,10 @@ public abstract class TestBaseRapor {
         Driver.closeDriver();
     }
 
-    @AfterTest(alwaysRun = true)
+//  @AfterTest(alwaysRun = true)
     public void tearDownTest() {
         extentReports.flush();
     }
+
+   */
 }

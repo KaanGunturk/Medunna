@@ -1,8 +1,9 @@
 package smokeTest;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
+
+import org.junit.Assert;
+import org.junit.Test;
 import pages.US_03_04Page;
 import utilities.ConfigReader;
 import utilities.Driver;
