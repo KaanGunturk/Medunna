@@ -12,23 +12,24 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin administration sekmesine basar
     And admin user management sekmesine basar
     And admin create a new user sekmesine basar
-    And admin login "ay9" firstname "ayberk9" lastname "ayberk9" mail "ayberk9@ayberk.com" SSN "393-69-9654" rol olarak doktor girer
+    And admin login "ay14" firstname "ayberk14" lastname "ayberk14" mail "ayberk14@ayberk.com" SSN "393-14-9654" rol olarak doktor girer
     And admin save tusuna basar
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     And admin create a new physician sekmesine basar
-    Then admin kayitli SSN "393-69-9654" girer ve dogrulama mesajinin geldigini test eder
+    Then admin kayitli SSN "393-10-9654" girer ve dogrulama mesajinin geldigini test eder
+    And admin sayfayi kapatir
 
     #333-39-9658 manuel için kullanılan ssn
   Scenario:TC002 Kişilerin "firstname, lastname birth date .." bilgileri doldurulabilmeli.
-    #And admin administration sekmesine basar
-    #And admin user management sekmesine basar
-    #And admin 531 sayfaya gecer
-    #And admin logini "ay9" olan doktorun idisini alir
+    And admin administration sekmesine basar
+    And admin user management sekmesine basar
+    And admin 543 sayfaya gecer
+    And admin logini "ay14" olan doktorun idisini alir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     And admin create a new physician sekmesine basar
-    Then admin kayitli SSN "393-69-9654" girer ve dogrulama mesajinin geldigini test eder
+    Then admin kayitli SSN "393-14-9654" girer ve dogrulama mesajinin geldigini test eder
     And admin use search check box tiklar
     And admin tarih "10.10.1980" girer
     And admin telefon "5555655555" girer
@@ -42,20 +43,24 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin country "Germany" secer
     And admin save tusuna basar
     Then create icin dogrulama mesajinin gorundugunu test eder
+    And admin sayfayi kapatir
+
+
 
 
   Scenario:TC003 Admin, bütün doctorların bilgilerini görebilmelidir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     Then admin bütün doktorların bilgilerinin görüldügünü test eder
+    And admin sayfayi kapatir
 
 
   Scenario:TC004 Admin, Doktorların bilgilerini düzenleyebilir.
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    And admin 23 sayfaya gecer
-    And admin firstname "ayberk9" olan doktorun idisini alir
-    And admin firstname "ayberk9" olan doktorun edit butona tiklar
+    And admin 22 sayfaya gecer
+    And admin firstname "ayberk14" olan doktorun idisini alir
+    And admin firstname "ayberk14" olan doktorun edit butona tiklar
     And admin tarih "10.11.1981" girer
     And admin telefon "5355557575" girer
     And admin adres "Meow York" girer
@@ -68,13 +73,15 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin country "Afghanistan" secer
     And admin save tusuna basar
     Then edit icin dogrulama mesajinin gorundugunu test eder
+    And admin sayfayi kapatir
 
   Scenario:TC005 Admin mevcut doktorları silebilir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    And admin 23 sayfaya gecer
-    And admin firstname "ayberk9" olan doktorun idisini alir
-    And admin firstname "ayberk9" olan doktorun delete butona tiklar
+    And admin 22 sayfaya gecer
+    And admin firstname "ayberk14" olan doktorun idisini alir
+    And admin firstname "ayberk14" olan doktorun delete butona tiklar
     And admin cikan uyari mesajinda delete butonuna basar
     Then delete icin dogrulama mesajinin gorundugunu test eder
+    And admin sayfayi kapatir
 
