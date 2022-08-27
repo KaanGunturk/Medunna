@@ -12,8 +12,10 @@ public class DatabaseUtility {
     protected static ResultSet resultSet;
     public static void createConnection() {
         String url = "jdbc:postgresql://medunna.com:5432/medunna_db";
-        String user = "medunnadb_user";
-        String password = "Medunnadb_@129";
+        String user = "medunna_user";
+        String password= "medunna_pass_987";
+      //  String user = "medunnadb_user";
+      //  String password = "Medunnadb_@129";
         try {
           connection = DriverManager.getConnection(url,user,password);
         } catch (SQLException e) {

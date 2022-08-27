@@ -84,4 +84,19 @@ public class Appointment {
                 ", date='" + date + '\'' +
                 '}';
     }
+    public int getId() {
+        return 0;
+    }
+
+    public String getStartDate() {
+        return null;
+    }
+
+    public String getEndDate() {
+        return null;
+    }
+
+    public String getStatus() {
+        return null;
+    }
 }
