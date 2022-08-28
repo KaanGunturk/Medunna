@@ -29,7 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="fa2a46c0-dd29-4cdf-af19-a1bcad417935">
-      <console name="Medunna" type="STANDARD" schema="" session="Main"><![CDATA[select * from physician]]></console>
+      <console name="Medunna" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -83,7 +83,7 @@
           <database value="medunna_db" />
           <type value="USER_PASSWORD" />
           <user value="medunnadb_user" />
-          <deprecated-pwd value="TWVkdW5uYWRiX0AxMjk=" />
+          <deprecated-pwd value="" />
         </database>
         <properties>
           <auto-commit value="false" />
