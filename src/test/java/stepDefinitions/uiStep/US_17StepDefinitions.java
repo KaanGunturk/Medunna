@@ -3,6 +3,7 @@ package stepDefinitions.uiStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.US_17Page;
@@ -137,7 +138,8 @@ public class US_17StepDefinitions {
         Thread.sleep(1000);
 
 
-        page.createdDate.sendKeys("19.08.2022 00:00");
+        page.createdDate.sendKeys("20.08.2022 00:00");
+        Assert.assertTrue(page.createdDate.equals("20.08.2022 00:00"));
 
 
         Actions actions = new Actions(Driver.getDriver());
