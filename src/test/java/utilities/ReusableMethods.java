@@ -30,6 +30,7 @@ public class ReusableMethods {
         return target;
     }
 
+
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
         for (String handle : Driver.getDriver().getWindowHandles()) {
@@ -128,5 +129,8 @@ public class ReusableMethods {
             }
         });
         return element;
+
+    //public static void waitFor(int i) {
+
     }
 }
