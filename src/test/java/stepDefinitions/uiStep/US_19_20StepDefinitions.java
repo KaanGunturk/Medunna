@@ -172,6 +172,8 @@ public class US_19_20StepDefinitions {
         Thread.sleep(10000);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollright = arguments[0].offsetWidth", page.deleteButton);
         page.deleteButton.click();
+        Thread.sleep(1000);
+        page.deleteOnay.click();
     }
 
     //us_20_tc_01
