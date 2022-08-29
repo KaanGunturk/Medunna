@@ -10,10 +10,7 @@ import utilities.Authentication;
 
 
 public class US_19ApiStepDefinitions {
-<<<<<<< Updated upstream
-  //  @When("ht Kullanıcı https:\\/\\/medunna.com adresine gidilir")
-    public void htKullanıcıHttpsMedunnaComAdresineGidilir() {
-=======
+
 
     Response responseget;
     Response responseDelete;
@@ -26,7 +23,7 @@ public class US_19ApiStepDefinitions {
         responseget.prettyPrint();
         responseDelete = ApiUtils.getRequest(Authentication.generateToken("healthprojectteam54", "AiGAYmJSJp.EN98"), "https://medunna.com/api/staff/229119");
        responseDelete.prettyPrint();
->>>>>>> Stashed changes
+
     }
 
   //  @And("ht Api ile kişinin silindiğini kontrol eder")
