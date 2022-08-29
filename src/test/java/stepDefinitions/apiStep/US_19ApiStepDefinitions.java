@@ -14,7 +14,7 @@ public class US_19ApiStepDefinitions {
 
     Response responseget;
     Response responseDelete;
-    int id;
+
 
 
     @And("api ile herhangi bir kişi silinir")
