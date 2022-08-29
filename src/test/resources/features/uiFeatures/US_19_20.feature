@@ -12,11 +12,11 @@ Feature: US_19 Admin Olarak; Yeni Staff (Personel) Oluşturma,Güncelleme,Silme
     And ht Sign in butonuna tıklar
     And ht Tems&titles tıkalr
     And ht Staff i secer
-    And ht tum ssn numaralarını alir.
+#    And ht tum ssn numaralarını alir.
     And ht Create a new staff e tıklar
-    And ht Ssn numarası girer
-    And ht Use search tıklar
-    And ht Search user e tıklar
+#    And ht Ssn numarası girer
+#    And ht Use search tıklar
+#    And ht Search user e tıklar
     And ht First Name, Last name,Birth Date,Phone,Gender,Blood Group,Address,Description,Created Date,User,Country,State/City kısımlarını doldurur."
     And ht Save butonuna tıklar.
 
