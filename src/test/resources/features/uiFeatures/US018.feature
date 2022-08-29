@@ -54,7 +54,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     Then admin bütün doktorların bilgilerinin görüldügünü test eder
     And admin sayfayi kapatir
 
-
+  @US018tc4
   Scenario:TC004 Admin, Doktorların bilgilerini düzenleyebilir.
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
