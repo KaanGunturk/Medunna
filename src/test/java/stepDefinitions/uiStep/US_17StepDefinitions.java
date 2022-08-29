@@ -137,7 +137,7 @@ public class US_17StepDefinitions {
         page.defaultValMax.sendKeys("19");
         Thread.sleep(1000);
 
-
+        page.createdDate.clear();
         page.createdDate.sendKeys("20.08.2022 00:00");
         Assert.assertTrue(page.createdDate.equals("20.08.2022 00:00"));
 
