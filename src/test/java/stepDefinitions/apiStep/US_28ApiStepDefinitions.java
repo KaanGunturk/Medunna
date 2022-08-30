@@ -28,11 +28,7 @@ public class US_28ApiStepDefinitions {
 
         Map<String,Object> actualDataMap = response.as(HashMap.class);
 
-        //US_28Pojo actualPojo = response.as(US_28Pojo.class);
-
-        assertTrue(actualDataMap.containsValue("Country54"));
-
-                //getName().contains("Country54"));
+        assertTrue(actualDataMap.toString().contains("Country55"));
     }
 
     @Given("AEE Kullanıcı, API kullanarak mevcut ülkeleri güncelleyebildigi test edilir")
