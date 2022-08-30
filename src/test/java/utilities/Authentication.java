@@ -27,6 +27,7 @@ public class Authentication {
         return token.getString("id_token");
     }
 
+
     public static String generateToken(){
         RequestSpecification spec = new RequestSpecBuilder().setBaseUri("https://www.medunna.com").build();
 
@@ -47,4 +48,5 @@ public class Authentication {
 
         return json.getString("id_token");
     }
+
 }

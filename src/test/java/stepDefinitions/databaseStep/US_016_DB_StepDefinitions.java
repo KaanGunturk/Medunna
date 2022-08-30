@@ -26,7 +26,7 @@ public class US_016_DB_StepDefinitions {
 
         statement=connection.createStatement();
 
-        resultSet=statement.executeQuery("select * from room where room_number=15207");
+        resultSet=statement.executeQuery("select * from room where room_number=7654438");
 
 
     }
@@ -54,7 +54,9 @@ public class US_016_DB_StepDefinitions {
 
 
 
-        List<Object>expectedRoom= Arrays.asList("216171","15207","DELUXE","1500.00","daha iyiside varmış","2022-08-22 12:43:43.598377","team_60","team_60","2022-08-22 15:37:58.611825");
+        List<Object>expectedRoom= Arrays.asList("216171","15207","DELUXE","1500.00","daha iyiside varmış",
+                "2022-08-22 12:43:43.598377",
+                "team_60","team_60","2022-08-22 15:37:58.611825");
 
         assertEquals(expectedRoom,actualRoom);
 
