@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.ConfigReader;
-import utilities.DBUtils;
+import utilities.DatabaseUtility;
 import utilities.Driver;
 
 public class Hooks extends ConfigReader {
@@ -19,7 +19,7 @@ public class Hooks extends ConfigReader {
         spec=new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("baseUrl")).build();
     }
     @Before
-    public void setUpApi(){DBUtils.createConnection();
+    public void setUpApi(){DatabaseUtility.createConnection();
     }
 
     @After
