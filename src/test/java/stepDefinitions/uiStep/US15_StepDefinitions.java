@@ -1,5 +1,5 @@
 package stepDefinitions.uiStep;
-
+/*
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -297,4 +297,4 @@ public class US15_StepDefinitions {
         Assert.assertTrue(locator.deletedToastContainer.getText().contains("deleted"));
         Driver.wait(1);
     }
-}
+}*/

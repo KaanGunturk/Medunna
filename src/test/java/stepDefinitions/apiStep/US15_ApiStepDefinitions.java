@@ -1,5 +1,5 @@
 package stepDefinitions.apiStep;
-
+/*
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.And;
@@ -137,4 +137,4 @@ public class US15_ApiStepDefinitions {
     public void api_there_are_no_swagger_documantation_for_register() {
         System.out.println("there are no swagger documantation for register");
     }
-}
+}*/

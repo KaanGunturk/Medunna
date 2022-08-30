@@ -89,4 +89,21 @@ public class ApiUtils {
     }
 
 
+    //AEE
+    public static Response putRequestMapl(String token, String endpoint, Map<String, Object> myMap){
+
+        Response response = given().headers(
+                "Authorization",
+                "Bearer " + token,
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).contentType(ContentType.JSON).body(myMap).when().put(endpoint);
+
+
+        return  response;
+
+    }
+
+
 }
