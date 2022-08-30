@@ -29,7 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="fa2a46c0-dd29-4cdf-af19-a1bcad417935">
-      <console name="Medunna" type="STANDARD" schema="" session="Main"><![CDATA[select * from appointment where id = 218422]]></console>
+      <console name="Medunna" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -82,8 +82,8 @@
           <port value="5432" />
           <database value="medunna_db" />
           <type value="USER_PASSWORD" />
-          <user value="medunna_user" />
-          <deprecated-pwd value="bWVkdW5uYV9wYXNzXzk4Nw==" />
+          <user value="medunnadb_user" />
+          <deprecated-pwd value="" />
         </database>
         <properties>
           <auto-commit value="false" />

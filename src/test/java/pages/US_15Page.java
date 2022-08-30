@@ -248,19 +248,6 @@ public class US_15Page extends BasePage {
     @FindBy(xpath = "//td[@class='text-right']/div/a[3]")
     public WebElement administrationUserDeleteButton;
 
-
-//            @FindBy(xpath = "(//div[@class='form-group'])[3]/div/input")
-//            public WebElement staffLoginEdit;
-//            @FindBy(xpath = "(//div[@class='form-group'])[3]/div/input")
-//            public WebElement staffFirstnameEdit;
-//            @FindBy(xpath = "(//div[@class='form-group'])[3]/div/input")
-//            public WebElement staffLastnameEdit;
-//            @FindBy(xpath = "(//div[@class='form-group'])[3]/div/input")
-//            public WebElement staffEmailEdit;
-//            @FindBy(xpath = "//input[@id='activated']")
-//            public WebElement staffEditActivatedCehckbox;
-
-
     // ids
     @FindBy(xpath = "//tbody/tr/td[1]")
     public List<WebElement> staffIDs;

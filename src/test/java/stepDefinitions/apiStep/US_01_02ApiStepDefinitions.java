@@ -21,8 +21,6 @@ import utilities.Authentication;
 import utilities.ConfigReader;
 
 
-import java.io.IOException;
-
 import static io.restassured.RestAssured.given;
 
 public class US_01_02ApiStepDefinitions {

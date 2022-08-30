@@ -158,6 +158,9 @@ public class US_19_20Page {
     @FindBy(xpath = "//*[@class='svg-inline--fa fa-pencil-alt fa-w-16 ']")
     public WebElement viewEditButton;
 
+    @FindBy(xpath="(//*[@class='svg-inline--fa fa-trash fa-w-14 '])[21]")
+    public WebElement deleteOnay;
+
 
 
 
