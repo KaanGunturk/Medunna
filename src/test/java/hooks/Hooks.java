@@ -28,7 +28,7 @@ public class Hooks extends ConfigReader {
         if (scenario.isFailed()) {
             scenario.attach(screenshot, "image/png","screenshots");
         }
-        Driver.closeDriver();
+        //Driver.closeDriver();
 
     }
 

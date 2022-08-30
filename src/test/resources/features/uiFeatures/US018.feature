@@ -24,7 +24,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
   Scenario:TC002 Kişilerin "firstname, lastname birth date .." bilgileri doldurulabilmeli.
     And admin administration sekmesine basar
     And admin user management sekmesine basar
-    And admin 543 sayfaya gecer
+    And admin 557 sayfaya gecer
     And admin logini "ay14" olan doktorun idisini alir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
@@ -54,11 +54,11 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     Then admin bütün doktorların bilgilerinin görüldügünü test eder
     And admin sayfayi kapatir
 
-
+  @US018tc4
   Scenario:TC004 Admin, Doktorların bilgilerini düzenleyebilir.
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    And admin 22 sayfaya gecer
+    And admin 24 sayfaya gecer
     And admin firstname "ayberk14" olan doktorun idisini alir
     And admin firstname "ayberk14" olan doktorun edit butona tiklar
     And admin tarih "10.11.1981" girer
@@ -78,7 +78,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
   Scenario:TC005 Admin mevcut doktorları silebilir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    And admin 22 sayfaya gecer
+    And admin 24 sayfaya gecer
     And admin firstname "ayberk14" olan doktorun idisini alir
     And admin firstname "ayberk14" olan doktorun delete butona tiklar
     And admin cikan uyari mesajinda delete butonuna basar
