@@ -1,5 +1,5 @@
 Feature: US_027 Messages by Admin Validate with API and DB
-
+  @US27UI
   Scenario: TC_001 Admin, mesaj portalina gidebilir tum mesajlari, yazarlarini
   ve e-postalarini goruntuleyebilir,mesaj olusturabilir, guncelleyebilir, silebilir
 

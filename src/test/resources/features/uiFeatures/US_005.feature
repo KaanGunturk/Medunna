@@ -1,6 +1,5 @@
-
 Feature:US_005 Hastalar (patients), hastahaneden randevu (Appointment) oluşturabilmelidir.
-
+  @US05UI
   Scenario: TC_001 kullanici randevu olustururken firs name last name ssn email phone
   bilgilerini girmelidir bos birakilamaz
 
