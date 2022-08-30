@@ -29,7 +29,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="fa2a46c0-dd29-4cdf-af19-a1bcad417935">
-      <console name="Medunna" type="STANDARD" schema="public" session="Main"><![CDATA[select * from patient]]></console>
+      <console name="Medunna" type="STANDARD" schema="public" session="Main"><![CDATA[select * from patient
+
+    select * from country]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -82,8 +84,8 @@
           <port value="5432" />
           <database value="medunna_db" />
           <type value="USER_PASSWORD" />
-          <user value="medunnadb_user" />
-          <deprecated-pwd value="" />
+          <user value="medunna_user" />
+          <deprecated-pwd value="bWVkdW5uYV9wYXNzXzk4Nw==" />
         </database>
         <properties>
           <auto-commit value="false" />
@@ -192,7 +194,7 @@
         <object-type name="FUNCTION" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
-        <object-type name="TYPE ATTRİBUTE" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRIBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
         <object-type name="VIEW" editor-type="SELECTION" />

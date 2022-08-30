@@ -4,19 +4,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.devtools.Connection;
-import utilities.DBUtils;
 import utilities.DatabaseUtility;
-import utilities.ReadTxt;
-import utilities.WriteToTxt;
 
-import java.beans.Statement;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class US_17_DBStepDefinitions {
 
