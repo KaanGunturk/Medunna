@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.emptyString;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 import static utilities.Authentication.generateToken;
@@ -34,80 +35,108 @@ public class US_16 {
 
         {
             /*
-            {
-        "createdBy": "adminaccount",
-        "createdDate": "2022-03-23T22:10:18.792452Z",
-        "id": 37656,
-        "roomNumber": 12651111,
-        "roomType": "TWIN",
-        "status": true,
-        "price": 120.00,
-        "description": "Mayday"
-        },
+           "createdBy": "userteam54",
+    "createdDate": "2022-08-29T18:28:52.937484Z",
+    "id": 246872,
+    "roomNumber": 76438,
+    "roomType": "DELUXE",
+    "status": true,
+    "price": 12900,
+    "description": "Oda olusturdum"
 
              */
-            expectedDataMap.put("createdBy","team54");
-            expectedDataMap.put("createdDate","2022-08-28T22:10:18.792452Z");
-            expectedDataMap.put( "roomNumber",7654438);
+            expectedDataMap.put("createdBy","userteam54");
+            expectedDataMap.put("createdDate","2022-08-29T18:28:52.937484Z");
+            expectedDataMap.put( "roomNumber",76438);
             expectedDataMap.put("roomType","DELUXE");
             expectedDataMap.put("status",true);
-            expectedDataMap.put("price",129000);
+            expectedDataMap.put("price",12900);
             expectedDataMap.put("description","Oda olusturdum");
 
-
         }
-
         response = ApiUtils.postRequestMapper(Authentication.generateToken("healthprojectteam54",
-                "AiGAYmJSJp.EN98"), "https://medunna.com/api/c-test-items", expectedDataMap);
-        //  System.out.println(expectedDataMap);
-
-
-
+                "AiGAYmJSJp.EN98"), "https://medunna.com/api/rooms", expectedDataMap);
+         //System.out.println(expectedDataMap);
 
     }
 
     @Given("kullanici olusturdugu datayi okumak icin get request yapar")
     public void kullanici_olusturdugu_datayi_okumak_icin_get_request_yapar() {
 
+        response = ApiUtils.getRequest(Authentication.generateToken("healthprojectteam54",
+                "AiGAYmJSJp.EN98"), "https://medunna.com/api/rooms/246872");
+
+        response.prettyPrint();
+
+
     }
 
     @Then("kullanici post request validation yapar")
     public void kullanici_post_request_validation_yapar() {
 
-    }
+        Map<String, Object> expectedDataMap = new HashMap<>();
 
-    @Given("kullanici roomlar icin put request yapar")
+        /*"createdBy": "userteam54",
+                "createdDate": "2022-08-29T18:28:52.937484Z",
+                "id": 246872,
+                "roomNumber": 76438,
+                "roomType": "DELUXE",
+                "status": true,
+                "price": 12900,
+                "description": "Oda olusturdum"
+
+        {
+
+         */
+            expectedDataMap.put("createdBy", "userteam54");
+            expectedDataMap.put("createdDate","2022-08-29T18:28:52.937484Z");
+            expectedDataMap.put("id", 246872);
+            expectedDataMap.put( "roomNumber",76438);
+            expectedDataMap.put("roomType","DELUXE");
+            expectedDataMap.put("status",true);
+            expectedDataMap.put("price",12900);
+            expectedDataMap.put( "description","Oda olusturdum");
+
+        }
+
+
+        @Given("kullanici roomlar icin put request yapar")
     public void kullanici_roomlar_icin_put_request_yapar() {
 
+        Room roomPut = new Room();
+
+        roomPut.setId(246872);
+        roomPut.setRoomType("DELUXE");
+        roomPut.setRoomNumber(76438);
+        roomPut.setDescription("API ILE DEGISTIRDIM");
+        roomPut.setStatus(true);
+        roomPut.setPrice(12900);
+
+
+        response=given().headers("Authorization",
+                "Bearer "+generateToken(),
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).body(roomPut).contentType(ContentType.JSON).
+                when().put(ConfigReader.getProperty("roomPut_endpoint"));
     }
+
 
     @Then("kullanici put request validation yapar")
     public void kullanici_put_request_validation_yapar() {
+        response.then().assertThat().
+                body("price",equalTo(12900)).
+                body("roomNumber",equalTo(76438)).
+                body("roomType",equalTo("DELUXE")).
+                body("status",equalTo(true)).
+                body("description",equalTo("API ILE DEGISTIRDIM"));
+
 
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
+    /*
     Room[] rooms;
 
     Room roomGet ;
