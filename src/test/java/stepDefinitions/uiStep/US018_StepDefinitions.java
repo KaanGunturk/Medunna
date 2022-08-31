@@ -337,8 +337,8 @@ public class US018_StepDefinitions {
         Assert.assertTrue(dogrulamaMesaji.getText().contains(expectedDogrulamaMesaji));
     }
 
-    @Then("admin bütün doktorların bilgilerinin görüldügünü test eder")
-    public void adminBütünDoktorlarınBilgilerininGörüldügünüTestEder() {
+    @Then("admin butun doktorlarin bilgilerinin goruldugunu test eder")
+    public void adminButunDoktorlarinBilgilerininGoruldugunuTestEder() {
         List<Object> expectedDataList = new ArrayList<>();
         expectedDataList.add(2051);
         expectedDataList.add("321-48-7891");
@@ -393,8 +393,6 @@ public class US018_StepDefinitions {
         }
 
  */
-
-
     }
 
     @Then("admin idsi {string} doktorun silindiginin dogrulama mesajini teyit eder")
@@ -469,4 +467,5 @@ public class US018_StepDefinitions {
     public void adminSayfayiKapatir() {
         Driver.closeDriver();
     }
+
 }
