@@ -73,7 +73,7 @@ public class US018_StepDefinitions {
     public void admin_physician_sekmesine_basar() {
         ReusableMethods.waitForVisibility(ayberk.physician, 10);
         ayberk.physician.click();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
 
@@ -135,60 +135,60 @@ public class US018_StepDefinitions {
     @And("admin use search check box tiklar")
     public void adminUseSearchCheckBoxTiklar() {
         ayberk.useSSNSearchCheckBox.click();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin tarih {string} girer")
     public void adminTarihGirer(String tarih) {
         ayberk.birthDate.sendKeys(tarih);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin telefon {string} girer")
     public void adminTelefonGirer(String tel) {
-        ayberk.phone.click();
+        //ayberk.phone.click();
         ayberk.phone.clear();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
         ayberk.phone.sendKeys(tel);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
 
     }
 
     @And("admin adres {string} girer")
     public void adminAdresGirer(String address) {
-        ayberk.adress.click();
+        //ayberk.adress.click();
         ayberk.adress.clear();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
         ayberk.adress.sendKeys(address);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin cinsiyet {string} belirler")
     public void adminCinsiyetBelirler(String gender) {
         select = new Select(ayberk.genderDdm);
         select.selectByVisibleText(gender);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin uzmanlik {string} belirler")
     public void adminUzmanlikBelirler(String speciality) {
         select = new Select(ayberk.specialityDdm);
         select.selectByVisibleText(speciality);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin kan grubu {string} secer")
     public void adminKanGrubuSecer(String bloodType) {
         select = new Select(ayberk.bloodGroupDdm);
         select.selectByVisibleText(bloodType);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin description {string} girer")
     public void adminDescriptionGirer(String desc) {
         ayberk.description.clear();
         ayberk.description.sendKeys(desc);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin fotograf yukler")
@@ -232,14 +232,14 @@ public class US018_StepDefinitions {
         js.executeScript("arguments[0].scrollIntoView(true);", ayberk.examFee);
         ayberk.examFee.clear();
         ayberk.examFee.sendKeys(exam);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin country {string} secer")
     public void adminCountrySecer(String country) {
         Select select = new Select(ayberk.countryDdm);
         select.selectByVisibleText(country);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin idsi {string} olan doktorun edit butona tiklar")
@@ -258,7 +258,7 @@ public class US018_StepDefinitions {
         WebElement editlenecekDoktor = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[18]/div/a[3]"));
         js.executeScript("arguments[0].click();", editlenecekDoktor);
 
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
 
 
     }
@@ -279,7 +279,7 @@ public class US018_StepDefinitions {
         WebElement editlenecekDoktor = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[18]/div/a[2]"));
         js.executeScript("arguments[0].click();", editlenecekDoktor);
 
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
 
     }
 
@@ -298,7 +298,7 @@ public class US018_StepDefinitions {
         WebElement editlenecekDoktor = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[18]/div/a[3]"));
         js.executeScript("arguments[0].click();", editlenecekDoktor);
 
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin firstname {string} olan doktorun delete butona tiklar")
@@ -317,7 +317,7 @@ public class US018_StepDefinitions {
         WebElement editlenecekDoktor = Driver.getDriver().findElement(By.xpath("//tr[" + count + "]/td[18]/div/a[3]"));
         js.executeScript("arguments[0].click();", editlenecekDoktor);
 
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
 
     }
 
@@ -414,14 +414,14 @@ public class US018_StepDefinitions {
         js.executeScript("arguments[0].scrollIntoView(true);", ayberk.medunnaText);
         WebElement sayfaNoButton = Driver.getDriver().findElement(By.xpath("//*[text()='" + sayfaNo + "']"));
         js.executeScript("arguments[0].click();", sayfaNoButton);
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
     }
 
     @And("admin cikan uyari mesajinda delete butonuna basar")
     public void adminCikanUyariMesajindaDeleteButonunaBasar() {
         ReusableMethods.waitForVisibility(ayberk.deleteButton2, 10);
         ayberk.deleteButton2.click();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
 
 
     }

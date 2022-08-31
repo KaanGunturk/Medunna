@@ -1,5 +1,4 @@
-@US018api
-  @ikisi
+@US018
 Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
 
   Scenario:TC006 API kullanarak doktorlari dogrulayın

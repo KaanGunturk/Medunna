@@ -1,3 +1,4 @@
+@negative
 Feature: US_08 Kullanıcı giriş yaptığında Password sekmesi düzenlenebilir olmalıdır.
 
   @negatif

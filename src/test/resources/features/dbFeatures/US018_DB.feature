@@ -1,4 +1,4 @@
-@US018db
+@US018
 Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
 
   Scenario:TC007 DB kullanarak doktorlari dogrulayın
