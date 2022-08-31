@@ -15,4 +15,4 @@ Feature: US_017 Test Items Api Test
 
     Then Nlh Admin olusturdugu datayi GetRequest yapar
 
-    And Nhl Admin ExpectedData ile ActualData arasinda dogrulama yapar
+    And Nhl Admin ExpectedData ile ActualData ara   sinda dogrulama yapar
