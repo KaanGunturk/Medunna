@@ -462,10 +462,4 @@ public class US018_StepDefinitions {
         System.out.println(alinacakIdStr);
     }
 
-
-    @And("admin sayfayi kapatir")
-    public void adminSayfayiKapatir() {
-        Driver.closeDriver();
-    }
-
 }
