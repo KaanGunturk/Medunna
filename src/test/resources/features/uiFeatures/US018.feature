@@ -20,7 +20,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     Then admin kayitli SSN "393-10-9654" girer ve dogrulama mesajinin geldigini test eder
 
 
-    #333-39-9658 manuel icin kullanılan ssn
+    #333-39-9658 manuel icin kullanilan ssn
   Scenario:TC002 Kisilerin "firstname, lastname birth date .." bilgileri doldurulabilmeli.
     And admin administration sekmesine basar
     And admin user management sekmesine basar
