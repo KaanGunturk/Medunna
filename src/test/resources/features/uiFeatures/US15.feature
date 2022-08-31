@@ -1,94 +1,82 @@
-@UIyasemin15
-Feature: US15 Create or Edit Patient by just Admin and Validate with API
+Feature:US15 Admin tarafından hasta oluşturma ve düzenleme
 
-  @TC01501
-  Scenario Outline: TC01501 New patients can only be created by admin
-    Given yyLaunch web browser and navigate to the home page
-    And yyClick Account Menu dropbox sign and click Sign In Text
-    And yyClick User Name textbox and enter admin user name "<AdminUsername>"
-    And yyClick Password textbox and enter admin password "<AdminPassword>"
-    And yyClick Sign In button
-    And yyClick Items&Titles button and Patient from dropdown box
-    And yyClick Create a new Patient button
-    And yyFill in or select these informations "<firstname>","<lastname>","<birthdate>","<email>","<phone>","<address>","<description>"
-    Then yyVerify the new patient was created by admin successfully Toast Container
+  Scenario:US15_TC01 Yeni hastalar yalnızca yönetici tarafından olusturulabilmeli
 
+    Given YY Kullanici "medunna" anasayfaya gider
+    And YY Kullanici Sag ust kosede bulunan icona tiklar
+    And YY Kullanici Sign-in butonuna tiklar
+    And YY Kullanici Admin Username girer
+    And YY Kullanici Admin Password girer
+    And YY Kullanici ikinci Sign-in butonuna tiklar
+    And YY Kullanici Items&Titles bolumune tiklar
+    And YY Kullanici Patient bolumune tiklar
+    And YY Kullanici acilan Patient sayfasindan Create or edit a Patient kutusuna tiklar
+    And YY Kullanici hasta kaydi olusturabilmek icin gerekli olan First Name,Last Name, Birt Date, Email, Phone, Gender, Blood Group, Adress,Description, User, Country, StateCity bolumlere veri girisi yapar
+    And YY Kullanici Save butonun tiklar
 
-    Examples:
-      |AdminUsername       |AdminPassword  |firstname|lastname|birthdate|email                       |phone       |    address             |description    |
-      |healthprojectteam54 |AiGAYmJSJp.EN98 |Yasemin  |Patient |18/11/1991|yasemin.aktoprak91@gmail.com|100-200-3000|1232 Sandia ave. Fremont|Yasemin Patient|
+  Scenario:US15_TC02 Yönetici "SSN, First Name, Last Name,
+  Birth Date, Phone, Gender, Blood Group, Address,
+  Description, Created Date, User, Country and state / City"
+  gibi hasta bilgilerini gorebilir.
 
-  @TC01502
-  Scenario Outline: TC01502 - Admin can see patient's all information such as; SSN, First Name, Last Name, Birth Date,Phone, Gender, Blood Group, Address, Description, Created Date, User, Country and state / City
+    Given YY Kullanici "medunna" anasayfaya gider
+    And YY Kullanici Sag ust kosede bulunan icona tiklar
+    And YY Kullanici admin olarak oturum acar
+    And YY Kullanici Items&Titles bolumune tiklar
+    And YY Kullanici Patient bolumune tiklar
+    And YY Kullanici Created Date bolumune tiklar
+    And YY Kullanici ilk sirada gelen hastanin ID numarasina tiklar
+    And YY Kullanici SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group,Address,Description, Created Date, User, Country and stateCity bilgilerinin gorunurlugunu test eder
 
-    Given yyLaunch web browser and navigate to the home page
-    And yyClick Account Menu dropbox sign and click Sign In Text
-    And yyClick User Name textbox and enter admin user name "<AdminUsername>"
-    And yyClick Password textbox and enter admin password "<AdminPassword>"
-    And yyClick Sign In button
-    Given yyClick Items&Titles button and select Patient from dropdown box
-    And yySelect id of any patient and click
-    Then yyVerify admin can see patient SSN
-    Then yyVerify admin can see patient First Name and Last Name
-    Then yyVerify admin can see patient Birth Date and Phone
-    Then yyVerify admin can see patient Gender and Blood Group
-    Then yyVerify admin can see patient Address and Description
-    Then yyVerify admin can see patient Created Date and User
-    Then yyVerify admin can see patient Country and State City
+  Scenario:US15_TC03 Hasta oluşturulduğunda veya güncellendiginde
+  yukarıdaki ogelere data girisi yapilabilmeli.
 
-    Examples: Test Data
-      |AdminUsername          |AdminPassword|
-      |healthprojectteam54    |AiGAYmJSJp.EN98      |
+    Given YY Kullanici "medunna" anasayfaya gider
+    And YY Kullanici Sag ust kosede bulunan icona tiklar
+    And YY Kullanici admin olarak oturum acar
+    And YY Kullanici Items&Titles bolumune tiklar
+    And YY Kullanici Patient bolumune tiklar
+    And YY Kullanici Created Date bolumune tiklar
+    And YY Kullanici ilk sirada gelen hastanin ID numarasina tiklar
+    And YY Kullanici edit butonuna tiklar
+    And YY Kullanici Acilan sayfada  SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address, Description, Created Date, User, Country and stateCity gibi bilgilerden bazilarinda degisiklik yapar
+    And YY Kullanici Save butonuna tiklar
+    And YY Kullanici hasta bilgilerinin guncellendigi dogrulanir
 
-  @TC01503
-  Scenario Outline: TC01503 - When creating or updating patient data, you have above items and following new item;  id.
-  Also Only admin can assign patient their doctor.
-    Given yyLaunch web browser and navigate to the home page
-    And yyClick Account Menu dropbox sign and click Sign In Text
-    And yyClick User Name textbox and enter admin user name "<AdminUsername>"
-    And yyClick Password textbox and enter admin password "<AdminPassword>"
-    And yyClick Sign In button
-    Given yyClick Items&Titles and click Patients
-    And yyClick Created Date and click first patient's ID number which is new created patient
-    Then yyVerify it has correct ID which is same with new created patient's id number
-    And yyClick Edit button, Enter a new data to Description and save
-    Then yyVerify admin can not assign patient to a doctor. Negative test BUG there is not a Doctor Assign web element
-    And yyClick Items&Titles and click Patients
-    And yyClick Created Date and click first patient's ID number
-    Then yyVerify ID is correct
+  Scenario:US15_TC04 Hastaya doktoru sadece Admin atayabilir.
 
-    Examples: Test Data
-      |AdminUsername          |AdminPassword|
-      |healthprojectteam54    |AiGAYmJSJp.EN98      |
+    Given YY Kullanici "medunna" anasayfaya gider
+    And YY Kullanici Sag ust kosede bulunan icona tiklar
+    And YY Kullanici admin olarak oturum acar
+    And YY Kullanici Items&Titles bolumune tiklar
+    And YY Kullanici Appointment bolumune tiklar
+    And YY Kullanici Create a new Appointment butonuna tiklar
+    And YY Kullanici Start DateTime ve End Date Time bilgileri girer
+    And YY Kullanici Status kismi secer
+    And YY Kullanici Physician kismindan Doktor bilgisi secer
+    And YY Kullanici Patient kismindan Hasta bilgisi secer
+    And YY Kullanici islemlerin ardindan Save butonuna tiklar
 
 
-  Scenario Outline: TC01504 - State should be provided country as USA and cannot be blank
+  Scenario:US15_TC05 "State", "US state" olmalı ve boş bırakılmamalı
 
-    Given yyLaunch web browser and navigate to the home page
-    And yyClick Account Menu dropbox sign and click Sign In Text
-    And yyClick User Name textbox and enter admin user name "<AdminUsername>"
-    And yyClick Password textbox and enter admin password "<AdminPassword>"
-    And yyClick Sign In button
-    Given yyClick Items&Titles button and select Patient from dropdown box
-    And yyClick Created Date and select first id which is new created patient
-    Then yyVerify Country is selected USA
-    Then yyVerify Country data is not blank
-    Examples: Test Data
-      |AdminUsername          |AdminPassword|
-      |healthprojectteam54    |AiGAYmJSJp.EN98      |
+    Given YY Kullanici "medunna" anasayfaya gider
+    And YY Kullanici Sag ust kosede bulunan icona tiklar
+    And YY Kullanici admin olarak oturum acar
+    And YY Kullanici Items&Titles bolumune tiklar
+    And YY Kullanici StateCity bolumune tiklar ve verileri kaydeder
+    And YY StatesCities sayfasinda StateCity bolumunun US oldugu test edilir
+    And YY StatesCities sayfasinda StateCity bolumunun bos olmamasi gerektigi test edilir
 
-  Scenario Outline:  TC01505 - Admin can delete any patient
+  Scenario:US15_TC06 Yönetici herhangi bir hastayı silebilir
 
-    Given yyLaunch web browser and navigate to the home page
-    And yyClick Account Menu dropbox sign and click Sign In Text
-    And yyClick User Name textbox and enter admin user name "<AdminUsername>"
-    And yyClick Password textbox and enter admin password "<AdminPassword>"
-    And yyClick Sign In button
-    Given yyClick Items&Titles button and select Patient from dropdown box
-    And yyClick Created Date and click first patient's ID number which is new created patient yenimethod
-    And yyClick Delete button and click Delete button on the alert
-    Then yyVerify if you get a successful deleted message
-
-    Examples: Test Data
-      |AdminUsername          |AdminPassword|
-      |healthprojectteam54    |AiGAYmJSJp.EN98      |
+    Given YY Kullanici "medunna" anasayfaya gider
+    And YY Kullanici Sag ust kosede bulunan icona tiklar
+    And YY Kullanici admin olarak oturum acar
+    And YY Kullanici Items&Titles bolumune tiklar
+    And YY Kullanici Patient bolumune tiklar
+    And YY Kullanici acilan Patient sayfasindan Create or edit a Patient kutusuna tiklar
+    And YY Kullanici hasta kaydi olusturabilmek icin gerekli olan First Name,Last Name, Birt Date, Email, Phone, Gender, Blood Group, Adress,Description, User, Country, StateCity bolumlere veri girisi yapar
+    And YY Kullanici Save butonun tiklar
+    And YY Kullanici Created Date bolumune tiklar
+    And YY Kullanici Ilk sirada gelen hasta ile ayni satirda bulunan Delete butonuna tiklar
