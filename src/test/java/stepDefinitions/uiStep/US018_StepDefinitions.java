@@ -146,7 +146,7 @@ public class US018_StepDefinitions {
 
     @And("admin telefon {string} girer")
     public void adminTelefonGirer(String tel) {
-        ayberk.phone.click();
+        //ayberk.phone.click();
         ayberk.phone.clear();
         ReusableMethods.waitFor(2);
         ayberk.phone.sendKeys(tel);
