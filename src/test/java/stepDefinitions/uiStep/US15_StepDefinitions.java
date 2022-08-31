@@ -22,16 +22,6 @@ import java.util.List;
 
 
 public class US15_StepDefinitions {
-<<<<<<< Updated upstream
-/*
-    US_15Page locator = new US_15Page();
-    Actions action = new Actions(Driver.getDriver());
-    static String idKeeper;
-
-    @Given("yyLaunch web browser and navigate to the home page")
-    public void launch_web_browser_and_navigate_to_the_home_page() {
-        Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
-=======
 
     US15_pages us15_pages=new US15_pages();
 
@@ -66,7 +56,6 @@ public class US15_StepDefinitions {
     public void yy_kullanici_admin_password_girer() {
         us15_pages.passwordTextbox.sendKeys(ConfigReader.getProperty("sifreAdmin"));
         reusableMethods.waitFor(1);
->>>>>>> Stashed changes
     }
     @And("YY Kullanici ikinci Sign-in butonuna tiklar")
     public void yy_kullanici_ikinci_sign_in_butonuna_tiklar() {
@@ -131,11 +120,11 @@ public class US15_StepDefinitions {
     }
     @And("YY Kullanici Yeni Hasta olusturuldugunu alert mesaji ile dogrular")
     public void yy_kullanici_yeni_hasta_olusturuldugunu_alert_mesaji_ile_dogrular() {
-       // reusableMethods.waitFor(2);
+        // reusableMethods.waitFor(2);
         //us15_pages.patientCreatedDate.click();
         reusableMethods.waitFor(3);
         Assert.assertTrue(us15_pages.patientAlert.isDisplayed());
-       // Assert.assertTrue(us15_pages.patientFirstNameActualData.getText().equals(patientFirstName));
+        // Assert.assertTrue(us15_pages.patientFirstNameActualData.getText().equals(patientFirstName));
         // Assert.assertTrue(us15_pages.patientEmailActualData.getText().equals(patientEmail));
 
     }
@@ -381,19 +370,6 @@ public class US15_StepDefinitions {
         Assert.assertTrue(!theListOfNameOfStatesFromWebTable.contains(null));
     }
 
-<<<<<<< Updated upstream
-    @Then("yyVerify if you get a successful deleted message")
-    public void verify_if_you_get_a_successful_deleted_message() {
-        System.out.println("toast " + locator.deletedToastContainer.getText());
-        List<String> deletedToastList= Arrays.asList(locator.deletedToastContainer.getText().split("\\s"));
-        System.out.println("deletedToastList = " + deletedToastList);
-        //System.out.println("list sonu id"+ deletedToastList.get(7));
-        //System.out.println("idkeeper  "+idKeeper);
-        Assert.assertTrue(locator.deletedToastContainer.getText().contains("deleted"));
-        Driver.wait(1);
-    }*/
-}
-=======
 
     @Given("YY Kullanici {string} anasayfaya gider")
     public void yyKullaniciAnasayfayaGider(String arg0) {
@@ -401,4 +377,3 @@ public class US15_StepDefinitions {
 
     }
 }
->>>>>>> Stashed changes

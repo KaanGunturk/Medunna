@@ -1,20 +1,6 @@
 package pojos.US15_Pojo;
 
 public class US15_UserPojo {
-    /* "user": {
-                "createdBy         " : "anonymousUser",
-                "createdDate       ": "2021-12-25T18:39:02.855496Z",
-                "id                ": 3317          ,
-                "login              ": "mustafatekin",
-                "firstName          ": "tekin",
-                "lastName           ": "mustafa",
-                "email              ": "mustafa@qa.team",
-                "activated          ": false,
-                "langKey            ": "en",
-                "imageUrl           ": null,
-                "resetDate          ": null,
-                "ssn                ": "111-22-3333"
-    },*/
 
     private String createdBy  ;
     private String createdDate;
