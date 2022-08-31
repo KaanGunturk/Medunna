@@ -1,5 +1,5 @@
 package stepDefinitions.uiStep;
-/*
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,7 +14,7 @@ import java.util.List;
 
 
 public class US15_StepDefinitions {
-
+/*
     US_15Page locator = new US_15Page();
     Actions action = new Actions(Driver.getDriver());
     static String idKeeper;
@@ -296,5 +296,5 @@ public class US15_StepDefinitions {
         //System.out.println("idkeeper  "+idKeeper);
         Assert.assertTrue(locator.deletedToastContainer.getText().contains("deleted"));
         Driver.wait(1);
-    }
-}*/
+    }*/
+}
