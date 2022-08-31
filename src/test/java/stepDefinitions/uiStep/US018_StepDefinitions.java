@@ -156,7 +156,7 @@ public class US018_StepDefinitions {
 
     @And("admin adres {string} girer")
     public void adminAdresGirer(String address) {
-        ayberk.adress.click();
+        //ayberk.adress.click();
         ayberk.adress.clear();
         ReusableMethods.waitFor(2);
         ayberk.adress.sendKeys(address);
