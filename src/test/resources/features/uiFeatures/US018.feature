@@ -55,7 +55,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
   Scenario:TC004 Admin, Doktorlarin bilgilerini duzenleyebilir.
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    And admin 24 sayfaya gecer
+    And admin 25 sayfaya gecer
     And admin firstname "ayberk14" olan doktorun idisini alir
     And admin firstname "ayberk14" olan doktorun edit butona tiklar
     And admin tarih "10.11.1981" girer
@@ -75,7 +75,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
   Scenario:TC005 Admin mevcut doktorlari silebilir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    And admin 24 sayfaya gecer
+    And admin 25 sayfaya gecer
     And admin firstname "ayberk14" olan doktorun idisini alir
     And admin firstname "ayberk14" olan doktorun delete butona tiklar
     And admin cikan uyari mesajinda delete butonuna basar
