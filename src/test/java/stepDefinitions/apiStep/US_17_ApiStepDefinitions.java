@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.response.Response;
 import org.junit.Assert;
+import pojos.US_28Pojo.US_28TestData;
 import pojos.ortakPojo.Appointment;
 import utilities.ApiUtils;
 import utilities.Authentication;
@@ -183,51 +184,9 @@ public class US_17_ApiStepDefinitions<testItems> {
         Assert.assertEquals(" ", actualDataMap.get("description"));
 
         Assert.assertEquals("17", actualDataMap.get("dafaultValMax"));
-
 */
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       /*
-       Assert.assertEquals("createdDate", actualDataMap.get("createdDate\n"));
-
-        Assert.assertEquals("createdBy", actualDataMap.get("createdBy\n"));
-
-        Assert.assertEquals("price", actualDataMap.get("price \n"));
-
-        Assert.assertEquals("name",actualDataMap.get("name\n"));
-
-        Assert.assertEquals("defaultValMin",actualDataMap.get("defaultValMin\n"));
-
-        Assert.assertEquals("description", actualDataMap.get("description\n"));
-
-        Assert.assertEquals("defaultValMax", actualDataMap.get("defaultValMax\n"));
-
-        // Assert.assertEquals( "id", actualDataMap.get("id"));
-
-
-        */
 
 
 
