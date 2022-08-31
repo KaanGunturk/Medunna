@@ -3,8 +3,6 @@ package stepDefinitions.apiStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.messages.internal.com.fasterxml.jackson.core.JsonProcessingException;
-import io.cucumber.messages.internal.com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 
@@ -12,6 +10,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 
+import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Assert;
 import pojos.US_01_02Pojo.US_01Staff_Country;
 import pojos.US_01_02Pojo.US_01Staff_Cstate;
@@ -21,6 +20,8 @@ import pojos.US_01_02Pojo.US_01_02Pojo;
 
 import utilities.Authentication;
 import utilities.ConfigReader;
+
+import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 
@@ -46,7 +47,7 @@ public class US_01_02ApiStepDefinitions {
     }
 
     @Then("Kullanici kayıtlı kişiler listesini de-seralazition eder")
-    public void kullaniciKayıtlıKişilerListesiniDeSeralazitionEder() throws JsonProcessingException {
+    public void kullaniciKayıtlıKişilerListesiniDeSeralazitionEder() throws IOException {
         ObjectMapper obj = new ObjectMapper();
 
         pojo = obj.readValue(response.asString(), US_01_02Pojo[].class);
