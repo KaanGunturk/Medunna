@@ -8,7 +8,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And user gecerli "userNameAdmin" ve "sifreAdmin" ile giris yapar
     And singin butonuna basar
 
-  Scenario:TC001 Admin, SSN kimliğine göre kayıtlı bir kişiyi seçebilir arayabilir.
+  Scenario:TC001 Admin, SSN kimligine gore kayitli bir kisiyi secebilir arayabilir.
     And admin administration sekmesine basar
     And admin user management sekmesine basar
     And admin create a new user sekmesine basar
@@ -20,11 +20,11 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     Then admin kayitli SSN "393-10-9654" girer ve dogrulama mesajinin geldigini test eder
     And admin sayfayi kapatir
 
-    #333-39-9658 manuel için kullanılan ssn
-  Scenario:TC002 Kişilerin "firstname, lastname birth date .." bilgileri doldurulabilmeli.
+    #333-39-9658 manuel icin kullanılan ssn
+  Scenario:TC002 Kisilerin "firstname, lastname birth date .." bilgileri doldurulabilmeli.
     And admin administration sekmesine basar
     And admin user management sekmesine basar
-    And admin 566 sayfaya gecer
+    And admin 567 sayfaya gecer
     And admin logini "ay14" olan doktorun idisini alir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
@@ -48,14 +48,14 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
 
 
 
-  Scenario:TC003 Admin, bütün doctorların bilgilerini görebilmelidir
+  Scenario:TC003 Admin, butun doctorlarin bilgilerini gorebilmelidir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
-    Then admin bütün doktorların bilgilerinin görüldügünü test eder
+    Then admin butun doktorlarin bilgilerinin goruldugunu test eder
     And admin sayfayi kapatir
 
   @US018tc4
-  Scenario:TC004 Admin, Doktorların bilgilerini düzenleyebilir.
+  Scenario:TC004 Admin, Doktorlarin bilgilerini duzenleyebilir.
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     And admin 24 sayfaya gecer
@@ -75,7 +75,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     Then edit icin dogrulama mesajinin gorundugunu test eder
     And admin sayfayi kapatir
 
-  Scenario:TC005 Admin mevcut doktorları silebilir
+  Scenario:TC005 Admin mevcut doktorlari silebilir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     And admin 24 sayfaya gecer
