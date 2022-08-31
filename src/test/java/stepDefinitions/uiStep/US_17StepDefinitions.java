@@ -3,6 +3,7 @@ package stepDefinitions.uiStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import pages.US_17Page;
@@ -112,7 +113,7 @@ public class US_17StepDefinitions {
 
         page.editButonu.click();
 
-        Thread.sleep(10000);
+        Thread.sleep(1000);
     }
 
 
@@ -136,8 +137,9 @@ public class US_17StepDefinitions {
         page.defaultValMax.sendKeys("19");
         Thread.sleep(1000);
 
-
-        page.createdDate.sendKeys("19.08.2022 00:00");
+        page.createdDate.clear();
+        page.createdDate.sendKeys("21.08.2022 00:00");
+        Assert.assertTrue(page.createdDate.equals("21.08.2022 00:00"));
 
 
         Actions actions = new Actions(Driver.getDriver());

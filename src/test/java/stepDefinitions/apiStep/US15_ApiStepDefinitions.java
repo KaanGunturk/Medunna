@@ -1,5 +1,5 @@
 package stepDefinitions.apiStep;
-/*
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.And;
@@ -10,7 +10,7 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import lombok.*;
+
 import org.junit.Assert;
 import org.junit.Test;
 import pojos.*;
@@ -27,6 +27,7 @@ import static utilities.Authentication.generateToken;
 import static utilities.WriteToTxt.saveRegistrantData;
 
 public class US15_ApiStepDefinitions {
+    /*
     static RequestSpecification specMed;
     static Response response;
     static Patient expectedPatient;
@@ -136,5 +137,5 @@ public class US15_ApiStepDefinitions {
     @Then("yyApi There are no swagger documantation for register")
     public void api_there_are_no_swagger_documantation_for_register() {
         System.out.println("there are no swagger documantation for register");
-    }
-}*/
+    }*/
+}

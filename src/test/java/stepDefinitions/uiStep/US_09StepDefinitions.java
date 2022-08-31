@@ -1,5 +1,5 @@
 package stepDefinitions.uiStep;
-/*
+
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,7 +10,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class US_09StepDefinitions {
-
+/*
     US_09Page us009Page = new US_09Page();
 
 
@@ -159,7 +159,7 @@ public class US_09StepDefinitions {
     }
 
 
-
+*/
 }
 
- */
+
