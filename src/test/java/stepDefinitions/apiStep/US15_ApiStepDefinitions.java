@@ -31,7 +31,6 @@ public class US15_ApiStepDefinitions {
     static RequestSpecification specMed;
     static Response response;
     static Patient expectedPatient;
-
     public static void main(String[] args) throws JsonProcessingException {
 
         specMed = new RequestSpecBuilder().
@@ -137,5 +136,6 @@ public class US15_ApiStepDefinitions {
     @Then("yyApi There are no swagger documantation for register")
     public void api_there_are_no_swagger_documantation_for_register() {
         System.out.println("there are no swagger documantation for register");
-    }*/
+    }
+   */
 }

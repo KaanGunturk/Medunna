@@ -1,6 +1,6 @@
 Feature: US_08 Kullanıcı giriş yaptığında Password sekmesi düzenlenebilir olmalıdır.
 
-  @US_08_TC_01
+  @negatif
   Scenario Outline: TC_01 "New password confirmation" onaylanabilmelidir.
     Given AEE Kullanici medunna.com adresine gider
     Then  AEE Kullanici Profil butonuna tiklar

@@ -24,5 +24,4 @@ public class Patient<InPatients> {
     private Country country;
     private InPatients [] inPatients;
     private State cstate;
-
 }
