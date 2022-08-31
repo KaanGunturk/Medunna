@@ -18,7 +18,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin physician sekmesine basar
     And admin create a new physician sekmesine basar
     Then admin kayitli SSN "393-10-9654" girer ve dogrulama mesajinin geldigini test eder
-    And admin sayfayi kapatir
+
 
     #333-39-9658 manuel icin kullanılan ssn
   Scenario:TC002 Kisilerin "firstname, lastname birth date .." bilgileri doldurulabilmeli.
@@ -43,16 +43,13 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin country "Germany" secer
     And admin save tusuna basar
     Then create icin dogrulama mesajinin gorundugunu test eder
-    And admin sayfayi kapatir
-
-
 
 
   Scenario:TC003 Admin, butun doctorlarin bilgilerini gorebilmelidir
     And admin items&titles sekmesine basar
     And admin physician sekmesine basar
     Then admin butun doktorlarin bilgilerinin goruldugunu test eder
-    And admin sayfayi kapatir
+
 
   @US018tc4
   Scenario:TC004 Admin, Doktorlarin bilgilerini duzenleyebilir.
@@ -73,7 +70,7 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin country "Afghanistan" secer
     And admin save tusuna basar
     Then edit icin dogrulama mesajinin gorundugunu test eder
-    And admin sayfayi kapatir
+
 
   Scenario:TC005 Admin mevcut doktorlari silebilir
     And admin items&titles sekmesine basar
@@ -83,5 +80,5 @@ Feature: US018 Admin olarak yeni Physician olustur gunceller goruntule ve sil
     And admin firstname "ayberk14" olan doktorun delete butona tiklar
     And admin cikan uyari mesajinda delete butonuna basar
     Then delete icin dogrulama mesajinin gorundugunu test eder
-    And admin sayfayi kapatir
+
 
