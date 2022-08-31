@@ -1,4 +1,4 @@
-@tumu
+@zh
 Feature: US_24 My Appointments (Randevular) (Patient)
 
   Scenario: US_24 TC01 Test sonuclari
@@ -21,6 +21,7 @@ Feature: US_24 My Appointments (Randevular) (Patient)
     Then ZH Kullanici gecerli bir tarih girer
     And ZH Kullanici Show Invoice butonuna tiklar
     And ZH Kullanici Invoice'in gorunur oldugunu test eder
+    Then ZH Kullanici sayfayi kapatir
 
 
   Scenario: US25_TC01 My Appointments by Patient in the account

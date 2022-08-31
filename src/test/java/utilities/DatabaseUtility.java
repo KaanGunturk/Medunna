@@ -14,8 +14,8 @@ public class DatabaseUtility {
         String url = "jdbc:postgresql://medunna.com:5432/medunna_db";
         String user = "medunna_user";
         String password= "medunna_pass_987";
-      //  String user = "medunnadb_user";
-      //  String password = "Medunnadb_@129";
+
+
         try {
           connection = DriverManager.getConnection(url,user,password);
         } catch (SQLException e) {
@@ -51,42 +51,19 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
-    /**
-     *
-     * @param query
-     * @return returns a single cell value. If the results in multiple rows and/or
-     *         columns of data, only first column of the first row will be returned.
-     *         The rest of the data will be ignored
-     */
+
     public static Object getCellValue(String query) {
         return getQueryResultList(query).get(0).get(0);
     }
-    /**
-     *
-     * @param query
-     * @return returns a list of Strings which represent a row of data. If the query
-     *         results in multiple rows and/or columns of data, only first row will
-     *         be returned. The rest of the data will be ignored
-     */
+
     public static List<Object> getRowList(String query) {
         return getQueryResultList(query).get(0);
     }
-    /**
-     *
-     * @param query
-     * @return returns a map which represent a row of data where key is the column
-     *         name. If the query results in multiple rows and/or columns of data,
-     *         only first row will be returned. The rest of the data will be ignored
-     */
+
     public static Map<String, Object> getRowMap(String query) {
         return getQueryResultMap(query).get(0);
     }
-    /**
-     *
-     * @param query
-     * @return returns query result in a list of lists where outer list represents
-     *         collection of rows and inner lists represent a single row
-     */
+
     public static List<List<Object>> getQueryResultList(String query) {
         executeQuery(query);
         List<List<Object>> rowList = new ArrayList<>();
@@ -106,12 +83,7 @@ public class DatabaseUtility {
         }
         return rowList;
     }
-    /**
-     *
-     * @param query
-     * @param column
-     * @return list of values of a single column from the result set
-     */
+
     public static List<Object> getColumnData(String query, String column) {
         executeQuery(query);
         List<Object> rowList = new ArrayList<>();
@@ -127,13 +99,6 @@ public class DatabaseUtility {
         }
         return rowList;
     }
-    /**
-     *
-     * @param query
-     * @return returns query result in a list of maps where the list represents
-     *         collection of rows and a map represents represent a single row with
-     *         key being the column name
-     */
 
 
 
@@ -156,11 +121,7 @@ public class DatabaseUtility {
         }
         return rowList;
     }
-    /**
-     *
-     * @param query
-     * @return List of columns returned in result set
-     */
+
     public static List<String> getColumnNames(String query) {
         executeQuery(query);
         List<String> columns = new ArrayList<>();
