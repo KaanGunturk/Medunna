@@ -4,8 +4,7 @@ package smokeTest;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pages.US_01_02Page;
-import pages.US_03_04Page;
+import pages.US3_4;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -14,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 
 public class NegatifLoginTest {
 
-     US_03_04Page us_03_04Page=new US_03_04Page();
+     US3_4 us_03_04Page=new US3_4();
 
     @Test
     public void test01() throws InterruptedException {

@@ -1,8 +1,8 @@
 package utilities;
 
 
-import pojos.ortakPojo.Appointment;
-import pojos.ortakPojo.Registrant;
+import pojos.ortak.Appointment;
+import pojos.ortak.Registrant;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

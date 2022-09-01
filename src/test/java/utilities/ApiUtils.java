@@ -2,7 +2,7 @@ package utilities;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import pojos.ortakPojo.Registrant;
+import pojos.ortak.Registrant;
 
 
 import java.util.Map;
