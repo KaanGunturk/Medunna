@@ -31,13 +31,9 @@
     <connection id="fa2a46c0-dd29-4cdf-af19-a1bcad417935">
       <console name="Medunna" type="STANDARD" schema="public" session="Main">select * from patient
 
-<<<<<<< Updated upstream
     select * from country
 
-select * from physician]]></console>
-=======
-    select * from country</console>
->>>>>>> Stashed changes
+select * from physician</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
