@@ -6,7 +6,7 @@ import utilities.DatabaseUtility;
 import java.util.ArrayList;
 import java.util.List;
 
-public class US_27DBStepDefinitions {
+public class US27 {
 
     @Given("Admin database ile baglanti kurar")
     public void admin_database_ile_baglanti_kurar() {

@@ -8,7 +8,7 @@ import utilities.Authentication;
 import java.util.HashMap;
 import java.util.Map;
 
-public class US_27ApiStepDefinitions {
+public class US27 {
 
     Response response;
 

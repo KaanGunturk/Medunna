@@ -4,16 +4,15 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.US_27Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import static utilities.ReusableMethods.waitFor;
 
 
-public class US_27StepDefinitions {
+public class US27 {
 
-    US_27Page us_27Page = new US_27Page();
+    pages.US27 us_27Page = new pages.US27();
     Actions actions = new Actions(Driver.getDriver());
 
     @Then("Kullanici username girer")
