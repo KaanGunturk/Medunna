@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.time.Duration;
 
@@ -29,6 +30,7 @@ public class US5 {
     public void kullanici_make_an_appointment_butonuna_tiklar() {
 
         us_005Page.appointment.click();
+        ReusableMethods.waitFor(1);
     }
 
     @Then("kullanici First Name girmeli bos birakilamaz")
@@ -36,6 +38,7 @@ public class US5 {
 
         actions.sendKeys(Keys.TAB);
         actions.sendKeys(" ").perform();
+        ReusableMethods.waitFor(1);
     }
 
     @Then("kullanici Last Name girmeli bos birakilamaz")
@@ -43,6 +46,7 @@ public class US5 {
 
         actions.sendKeys(Keys.TAB);
         actions.sendKeys(" ").perform();
+        ReusableMethods.waitFor(1);
     }
 
     @Then("kullanici kayitli SSN numarasi girmeli bos birakilamaz")
@@ -50,6 +54,7 @@ public class US5 {
 
         actions.sendKeys(Keys.TAB);
         actions.sendKeys(" ").perform();
+        ReusableMethods.waitFor(1);
     }
 
     @Then("kullanici email adresi girmeli bos birakilamaz")
@@ -57,6 +62,7 @@ public class US5 {
 
         actions.sendKeys(Keys.TAB);
         actions.sendKeys(" ").perform();
+        ReusableMethods.waitFor(1);
     }
 
     @Then("kullanici telefon numarasi girmeli bos birakilamaz")
@@ -64,7 +70,11 @@ public class US5 {
 
         actions.sendKeys(Keys.TAB);
         actions.sendKeys(Keys.TAB);
+        actions.sendKeys(Keys.TAB);
+        actions.sendKeys(Keys.TAB);
+        actions.sendKeys(Keys.TAB);
         actions.sendKeys(" ").perform();
+        ReusableMethods.waitFor(1);
     }
 
     @Then("kullanici tum bilgileri girmeden randevu olusturamayacagini gorur")
@@ -75,6 +85,7 @@ public class US5 {
         Assert.assertTrue(us_005Page.ssnRequired.isDisplayed());
         Assert.assertTrue(us_005Page.emailRequired.isDisplayed());
         Assert.assertTrue(us_005Page.phoneRequired.isDisplayed());
+        ReusableMethods.waitFor(1);
     }
 
     @Then("kullanici sayfayi kapatir")
@@ -87,6 +98,7 @@ public class US5 {
     public void kullanici_herhangi_bir_karakter_iceren_first_name_girer() {
 
         us_005Page.firstName.sendKeys("Patient");
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -94,6 +106,7 @@ public class US5 {
     public void kullanici_herhangi_bir_karakter_iceren_last_name_girer() {
 
         us_005Page.lastName.sendKeys("Team54");
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -101,6 +114,7 @@ public class US5 {
     public void kullanici_kayitli_ssn_numarasi_girer() {
 
         us_005Page.ssn.sendKeys("485-58-8385");
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -108,6 +122,7 @@ public class US5 {
     public void kullanici_ve_iceren_email_adresi_girer() {
 
         us_005Page.email.sendKeys("patientteam54@gmail.com");
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -115,6 +130,7 @@ public class US5 {
     public void kullanici_ucuncu_ve_altinci_rakamdan_sonra_olan_on_rakamli_telefon_no_girer() {
 
         us_005Page.phone.sendKeys("234-543-8785");
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -122,6 +138,7 @@ public class US5 {
     public void kullanici_send_an_appointment_request_butonuna_tiklar() {
 
         us_005Page.appoButon.sendKeys(Keys.ENTER);
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -132,6 +149,7 @@ public class US5 {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(60));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='alert']")));
         Assert.assertTrue(element.isDisplayed());
+        ReusableMethods.waitFor(3);
 
     }
 
@@ -139,12 +157,14 @@ public class US5 {
     public void kullanici_profil_butonuna_tiklar() {
 
         us_005Page.profilMenu.click();
+        ReusableMethods.waitFor(1);
     }
 
     @Then("kullanici sing in butonuna tiklar")
     public void kullanici_sing_in_butonuna_tiklar() {
 
         us_005Page.signIn.click();
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -152,6 +172,7 @@ public class US5 {
     public void kullanici_username_girer() {
 
         us_005Page.username.sendKeys(ConfigReader.getProperty("userNamePatient"));
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -159,6 +180,7 @@ public class US5 {
     public void kullanici_password_girer() {
 
         us_005Page.password.sendKeys(ConfigReader.getProperty("sifrePatient"));
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -166,6 +188,7 @@ public class US5 {
     public void kullanici_sign_in_butonuna_tiklar() {
 
         us_005Page.ikinciSignIn.click();
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -173,6 +196,7 @@ public class US5 {
     public void kullanici_my_pages_butonuna_tiklar() {
 
         us_005Page.myPages.click();
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -180,6 +204,7 @@ public class US5 {
     public void kullanici_my_appointments_butonuna_tiklar() {
 
         us_005Page.myAppointments.click();
+        ReusableMethods.waitFor(1);
 
     }
 
@@ -187,6 +212,7 @@ public class US5 {
     public void kullanici_aldigi_randevuyu_profil_sayfasinda_gorur() {
 
         Assert.assertTrue(us_005Page.randevuId.isDisplayed());
+        ReusableMethods.waitFor(1);
 
     }
 

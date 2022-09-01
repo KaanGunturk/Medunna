@@ -17,8 +17,8 @@
       <scope value="GLOBAL" />
       <destination value="FILE" />
       <format value="EXCEL" />
-      <charset value="windows-1254" />
-      <charset value="windows-1254" />
+      <charset value="windows-1252" />
+      <charset value="windows-1252" />
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -29,11 +29,11 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="fa2a46c0-dd29-4cdf-af19-a1bcad417935">
-      <console name="Medunna" type="STANDARD" schema="public" session="Main"><![CDATA[select * from patient
+      <console name="Medunna" type="STANDARD" schema="public" session="Main">select * from patient
 
     select * from country
 
-select * from physician]]></console>
+select * from physician</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
