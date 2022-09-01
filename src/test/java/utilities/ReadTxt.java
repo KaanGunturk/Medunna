@@ -5,7 +5,7 @@ import pojos.Registrant;
 
  */
 
-import pojos.ortakPojo.Physician;
+import pojos.ortak.Physician;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
